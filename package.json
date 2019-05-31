@@ -32,7 +32,7 @@
   "scripts": {
     "lint": "eslint . && tslint -p ./ && tslint -p ./test",
     "lint:fix": "eslint . --fix && tslint -p ./ --fix && tslint -p ./test --fix",
-    "test": "npm audit && npm run lint && npm run unit",
+    "test": "npm audit || true && npm run lint && npm run unit",
     "unit": "jest",
     "build": "npm run build:node && npm run build:browser",
     "build:node": "tsc",
