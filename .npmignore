@@ -1,0 +1,9 @@
+.vscode
+test
+tsconfig.json
+coverage
+.*
+*.config.js
+docs/
+src/
+example/

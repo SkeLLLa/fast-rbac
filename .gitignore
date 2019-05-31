@@ -1,0 +1,8 @@
+.idea
+node_modules
+deploy
+build
+coverage
+config/local.*
+**/*.xxx.js  
+dist/
