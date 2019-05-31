@@ -1,7 +1,7 @@
 # fast-rbac
 
 <div align="center">
-  <img src="https://gitlab.com/m03geek/fast-rbac/blob/master/rbac.logo.svg" width="650" height="auto"/>
+  <img src="https://gitlab.com/m03geek/fast-rbac/raw/master/rbac.logo.svg" width="300" height="auto"/>
 </div>
 
 
