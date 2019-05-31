@@ -1,0 +1,44 @@
+[fast-rbac](../README.md) > [RulesObject](../interfaces/rbac.rulesobject.md)
+
+# Interface: RulesObject
+
+## Hierarchy
+
+**RulesObject**
+
+## Index
+
+### Properties
+
+* [can](rbac.rulesobject.md#can)
+* [inherits](rbac.rulesobject.md#inherits)
+
+---
+
+## Properties
+
+<a id="can"></a>
+
+###  can
+
+**● can**: *`Array`<`string` \| [ResourcePermission](rbac.resourcepermission.md)>*
+
+*Defined in index.ts:202*
+
+List of resource and permissions.
+
+*__example__*: can: \["foo:create", "bar:_", "_:read"\] can: \["\*"\] can: \[{ name: "baz", operation: "create", when: (ctx) => { return ctx.user.id === ctx.obj.creatorId } }\]
+
+___
+<a id="inherits"></a>
+
+### `<Optional>` inherits
+
+**● inherits**: *`Array`<`string`>*
+
+*Defined in index.ts:206*
+
+Optionally extend permissions from other roles.
+
+___
+

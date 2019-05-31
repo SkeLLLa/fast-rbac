@@ -46,6 +46,7 @@ class RBAC {
 
   /**
    * RBAC constructor
+   * @param options RBAC options
    */
   constructor(options: RBAC.Options) {
     const {roles, memoize = true} = options;
@@ -82,7 +83,9 @@ class RBAC {
   }
 
   /**
-   * Adds new role to rules
+   * Adds new role to rules.
+   * @todo Not implemented yet
+   * @version next
    * @param role user role
    * @param resource resource to access
    * @param permissions permission or permission list
@@ -97,21 +100,23 @@ class RBAC {
     throw Error('Not implemented');
   }
   /**
-   * Checks if user can perform operation without checking when condition
+   * Checks if user can perform operation without checking when condition.
+   * @version 1.X.X
    * @param role user role
-   * @param resource resource to access
-   * @param permissions permission or permission list
+   * @param resource resource to access 
+   * @param operation operation on resource
    * @returns true if role has access to resources
    */
-  can(role: string, resource: string, operation: string): boolean;
+  can(role: string, resource: string, operation?: string): boolean;
 
   /**
-   * Checks if user can perform operation with checking when condition if it's provided
+   * Checks if user can perform operation with checking when condition if it's provided.
+   * @version 1.X.X
    * @param role user role
    * @param resource resource to access
-   * @param permissions permission or permission list
+   * @param operation operation on resource
    * @param context context passed to when function, set it to null
-   * @returns true if role has access to resources
+   * @returns true if role has access to resources.
    */
   can(
     role: string,
@@ -156,8 +161,7 @@ class RBAC {
     if (checkWhen) {
       return check(context);
     }
-    return !!check;
-    // return true;
+    return Boolean(check);
   }
 }
 
@@ -182,7 +186,7 @@ namespace RBAC {
   }
   export interface RulesObject {
     /**
-     * List of resource and permissions
+     * List of resource and permissions.
      * @example
      * can: ["foo:create", "bar:*", "*:read"]
      * can: ["*"]
@@ -197,13 +201,13 @@ namespace RBAC {
      */
     can: Array<string | ResourcePermission>;
     /**
-     * Optionally extend permissions from other roles
+     * Optionally extend permissions from other roles.
      */
     inherits?: Array<string>;
   }
   export interface Options {
     /**
-     * Initial roles with permissions
+     * Initial roles with permissions.
      */
     roles: {
       [roleName: string]: RBAC.RulesObject;
