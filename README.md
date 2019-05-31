@@ -2,8 +2,6 @@
 
 <div align="center">
   <img src="https://gitlab.com/m03geek/fast-rbac/raw/master/rbac.logo.svg" width="300" height="auto"/>
-</div>
-
 
 [![NPM Version](https://img.shields.io/npm/v/fast-rbac.svg)](https://www.npmjs.com/package/fast-rbac)
 [![Downloads Count](https://img.shields.io/npm/dm/fast-rbac.svg)](https://www.npmjs.com/package/fast-rbac)
@@ -11,6 +9,7 @@
 [![Build Status](https://gitlab.com/m03geek/fast-rbac/badges/master/pipeline.svg)](https://gitlab.com/m03geek/fast-rbac/commits/master)
 [![License](https://img.shields.io/npm/l/fast-rbac.svg)](https://gitlab.com/m03geek/fast-rbac/blob/master/LICENSE)
 [![Coverage Status](https://gitlab.com/m03geek/fast-rbac/badges/master/coverage.svg)](https://gitlab.com/m03geek/fast-rbac/commits/master)
+</div>
 
 Implementation of RBAC module tuned to be fast
 
