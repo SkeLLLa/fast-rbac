@@ -1,5 +1,10 @@
 # fast-rbac
 
+<div align="center">
+  <img src="https://gitlab.com/m03geek/fast-rbac/blob/master/rbac.logo.svg" width="650" height="auto"/>
+</div>
+
+
 [![NPM Version](https://img.shields.io/npm/v/fast-rbac.svg)](https://www.npmjs.com/package/fast-rbac)
 [![Downloads Count](https://img.shields.io/npm/dm/fast-rbac.svg)](https://www.npmjs.com/package/fast-rbac)
 [![Vunerabilities Count](https://snyk.io/test/npm/fast-rbac/badge.svg)](https://www.npmjs.com/package/fast-rbac)
