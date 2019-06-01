@@ -1,4 +1,6 @@
 import RBAC from '../src';
+import {inspect} from 'util';
+
 const a = new RBAC({
   roles: {
     user: {can: ['cat:create', 'dog:*', {name: 'foo', operation: 'read'}]},
@@ -21,4 +23,5 @@ const a = new RBAC({
   },
 });
 
+console.log(inspect(a, false, 5));
 console.log(a.can('user', 'dog', 'read'));
