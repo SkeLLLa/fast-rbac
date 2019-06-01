@@ -84,33 +84,74 @@ class RBAC {
 
   /**
    * Adds new role to rules.
-   * @todo Not implemented yet
-   * @version next
+   * @public
+   * @version 1.1.X
    * @param role user role
    * @param resource resource to access
-   * @param permissions permission or permission list
+   * @param operation allowed operation
    * @param when function for additional checks
    */
   public add(
-    _role: string,
-    _resource: string,
-    _permissions: Array<string> | string,
-    _when?: RBAC.WhenFn
-  ) {
-    throw Error('Not implemented');
+    role: string,
+    resource: string,
+    operation: string,
+    when?: RBAC.WhenFn
+  ): void {
+    this._rules[role] = this._rules[role] || {};
+    this._rules[role][resource] = this._rules[role][resource] || {};
+    this._rules[role][resource][operation] =
+      typeof when === 'undefined' ? true : when;
+    this._compile();
   }
+
+  /**
+   * Remove rule(s).
+   * @public
+   * @version 1.1.X
+   * @param role user role
+   * @param resource resource to access
+   * @param operation operation
+   */
+  public remove(role: string, resource = '*', operation = '*'): void {
+    if (resource === '*') {
+      if (operation === '*') {
+        // role:*:*
+        delete this._rules[role];
+      } else {
+        // role:*:operation
+        delete this._rules[role][resource][operation];
+        for (const [res, opRule] of Object.entries(this._rules[role])) {
+          if (Object.keys(opRule).indexOf(operation) !== -1) {
+            delete this._rules[role][res][operation];
+          }
+        }
+      }
+    } else {
+      if (operation === '*') {
+        // role:resource:*
+        delete this._rules[role][resource];
+      } else {
+        // role:resource:operation
+        delete this._rules[role][resource][operation];
+      }
+    }
+    this._compile();
+  }
+
   /**
    * Checks if user can perform operation without checking when condition.
+   * @public
    * @version 1.X.X
    * @param role user role
-   * @param resource resource to access 
+   * @param resource resource to access
    * @param operation operation on resource
    * @returns true if role has access to resources
    */
-  can(role: string, resource: string, operation?: string): boolean;
+  public can(role: string, resource: string, operation?: string): boolean;
 
   /**
    * Checks if user can perform operation with checking when condition if it's provided.
+   * @public
    * @version 1.X.X
    * @param role user role
    * @param resource resource to access
@@ -118,14 +159,14 @@ class RBAC {
    * @param context context passed to when function, set it to null
    * @returns true if role has access to resources.
    */
-  can(
+  public can(
     role: string,
     resource: string,
     operation: string,
     context: any
   ): Promise<boolean>;
 
-  can(
+  public can(
     role: string,
     resource: string,
     operation: string,
