@@ -6,4 +6,10 @@ describe(name, () => {
   test('module exported', async () => {
     expect(module).toBeDefined();
   });
+
+  test('interface exported', async () => {
+    expect(module.prototype.can).toBeDefined();
+    expect(module.prototype.add).toBeDefined();
+    expect(module.prototype.remove).toBeDefined();
+  });
 });
