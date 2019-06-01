@@ -45,7 +45,11 @@ export function mergeRoles(
 ): {[key: string]: any} {
   for (const src of srcs) {
     for (const [key, val] of Object.entries(src)) {
-      dst[key] = Object.assign({}, dst[key], val);
+      if (typeof val === 'object') {
+        dst[key] = Object.assign({}, dst[key], val);
+      } else {
+        dst[key] = val;
+      }
     }
   }
 
