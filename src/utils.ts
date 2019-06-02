@@ -33,7 +33,7 @@ export function flatten(
     );
   };
 
-  return Object.assign({}, walker(object));
+  return {...walker(object)};
 }
 
 /**
@@ -46,7 +46,7 @@ export function mergeRoles(
   for (const src of srcs) {
     for (const [key, val] of Object.entries(src)) {
       if (typeof val === 'object') {
-        dst[key] = Object.assign({}, dst[key], val);
+        dst[key] = {...dst[key], ...val};
       } else {
         dst[key] = val;
       }

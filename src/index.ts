@@ -37,11 +37,9 @@ class RBAC {
       refsToCompile[role] = this._collectRefs(ref);
     }
 
-    this._rulesCompiled = Object.assign(
-      {},
-      flatten(refsToCompile, SEPARATOR),
-      flatten(this._rules, SEPARATOR)
-    );
+    this._rulesCompiled = {...flatten(refsToCompile, SEPARATOR),
+      ...flatten(this._rules, SEPARATOR)
+    };
   }
 
   /**
