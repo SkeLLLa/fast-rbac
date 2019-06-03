@@ -8,8 +8,8 @@
 [![Vunerabilities Count](https://snyk.io/test/npm/fast-rbac/badge.svg)](https://www.npmjs.com/package/fast-rbac)
 [![Build Status](https://gitlab.com/m03geek/fast-rbac/badges/master/pipeline.svg)](https://gitlab.com/m03geek/fast-rbac/commits/master)
 [![License](https://img.shields.io/npm/l/fast-rbac.svg)](https://gitlab.com/m03geek/fast-rbac/blob/master/LICENSE)
+[![Codecov](https://img.shields.io/codecov/c/gl/m03geek/fast-rbac.svg)](https://codecov.io/gl/m03geek/fast-rbac)
 <!-- [![Coverage Status](https://gitlab.com/m03geek/fast-rbac/badges/master/coverage.svg)](https://gitlab.com/m03geek/fast-rbac/commits/master) -->
-[![Coverage](https://codecov.io/gl/m03geek/fast-rbac/branch/master/graph/badge.svg)](https://codecov.io/gl/m03geek/fast-rbac)
 </div>
 
 Implementation of RBAC module tuned to be fast

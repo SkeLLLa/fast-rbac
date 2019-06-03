@@ -52,9 +52,12 @@
   "keywords": [
     "rbac",
     "acl",
-    "access control",
-    "roles",
-    "authorization"
+    "access",
+    "role",
+    "authorization",
+    "privacy",
+    "security",
+    "permission"
   ],
   "author": "m03geek",
   "license": "MIT",
