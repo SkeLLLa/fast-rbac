@@ -40,10 +40,10 @@
     "build:browser": "npm run build:browser:amd && npm run build:browser:system",
     "build:browser:amd": "tsc -p browser.tsconfig.json -m amd -t es6 --outFile dist/browser/rbac.bundle.amd.js",
     "build:browser:system": "tsc -p browser.tsconfig.json -m system -t es6 --outFile dist/browser/rbac.bundle.system.js",
-    "prerelease": "npm run typedoc",
-    "release": "git add -A && standard-version -A",
+    "prerelease": "npm run typedoc && git add -A ./docs",
+    "release": "git add -U && standard-version -A",
     "typedoc": "rm -rf ./docs/* && typedoc --entryPoint RBAC --excludeExternals --name \"$npm_package_name\" --readme none --mode file --includeDeclarations --excludePrivate --theme markdown --out ./docs",
-    "docs": "documentation build dist/rbac.js --resolve=node -f md -o api.md"
+    "docs": "documentation build dist/rbac.js --resolve=node -f md -o API.md"
   },
   "repository": {
     "type": "git",
@@ -67,10 +67,10 @@
   "homepage": "https://gitlab.com/m03geek/fast-rbac#README",
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^7.6.1",
-    "@commitlint/config-conventional": "^7.6.0",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
+    "@types/node": "^12.0.4",
     "codecov": "^3.5.0",
     "documentation": "^11.0.0",
     "eslint": "^5.16.0",
@@ -83,10 +83,10 @@
     "standard-version": "^6.0.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.2.0",
-    "tslint": "^5.16.0",
+    "tslint": "^5.17.0",
     "tslint-eslint-rules": "^5.4.0",
     "typedoc": "^0.14.0",
     "typedoc-plugin-markdown": "^1.2.0",
-    "typescript": "^3.4.3"
+    "typescript": "^3.5.1"
   }
 }
