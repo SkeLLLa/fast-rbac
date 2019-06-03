@@ -49,9 +49,11 @@
     "url": "https://github.com/SkeLLLa/fast-rbac.git"
   },
   "keywords": [
-    "fastify",
-    "prometheus",
-    "metrics"
+    "rbac",
+    "acl",
+    "access control",
+    "roles",
+    "authorization"
   ],
   "author": "m03geek",
   "license": "MIT",

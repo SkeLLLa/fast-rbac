@@ -18,7 +18,7 @@ Main rules:
 * No RegEx
 * O(1) time complexity for checking rules
 * Wildcard and inherited rules caching
-* No foolproof checks
+* No foolproof checks (use docs, jsdoc, types and implement those checks on your side if necessary)
 * Zero dependency
 
 ## ToC
