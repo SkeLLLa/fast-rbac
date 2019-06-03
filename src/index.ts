@@ -47,8 +47,7 @@ class RBAC {
    * RBAC constructor
    * @param options RBAC options
    */
-  constructor(options: RBAC.Options) {
-    const {roles, memoize = true} = options;
+  constructor({roles = {}, memoize = true}: RBAC.Options = {}) {
     this._memoize = memoize;
 
     for (const [roleName, permissions] of Object.entries(roles)) {
@@ -118,7 +117,9 @@ class RBAC {
         delete this._rules[role];
       } else {
         // role:*:operation
-        delete this._rules[role][resource][operation];
+        if (this._rules[role][resource]) {
+          delete this._rules[role][resource][operation];
+        }
         for (const [res, opRule] of Object.entries(this._rules[role])) {
           if (Object.keys(opRule).indexOf(operation) !== -1) {
             delete this._rules[role][res][operation];
@@ -249,7 +250,7 @@ namespace RBAC {
     /**
      * Initial roles with permissions.
      */
-    roles: {
+    roles?: {
       [roleName: string]: RBAC.RulesObject;
     };
     /**
