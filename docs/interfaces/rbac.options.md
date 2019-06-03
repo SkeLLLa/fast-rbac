@@ -23,7 +23,7 @@
 
 **● memoize**: *`undefined` \| `false` \| `true`*
 
-*Defined in index.ts:219*
+*Defined in index.ts:260*
 
 If true makes wildcard matches faster
 
@@ -32,17 +32,13 @@ If true makes wildcard matches faster
 ___
 <a id="roles"></a>
 
-###  roles
+### `<Optional>` roles
 
-**● roles**: *`object`*
+**● roles**: *`undefined` \| `object`*
 
-*Defined in index.ts:212*
+*Defined in index.ts:253*
 
 Initial roles with permissions.
-
-#### Type declaration
-
-[roleName: `string`]: [RulesObject](rbac.rulesobject.md)
 
 ___
 

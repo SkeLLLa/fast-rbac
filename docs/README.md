@@ -29,6 +29,7 @@
 
 * [add](#add)
 * [can](#can)
+* [remove](#remove)
 
 ---
 
@@ -40,7 +41,7 @@
 
 **Ƭ WhenFn**: *`function`*
 
-*Defined in index.ts:169*
+*Defined in index.ts:210*
 
 #### Type declaration
 ▸(context: *`any`*): `boolean` \| `Promise`<`boolean`>
@@ -61,17 +62,20 @@ ___
 
 ###  constructor
 
-⊕ **new RBAC**(options: *[Options](interfaces/rbac.options.md)*): [RBAC]()
+⊕ **new RBAC**(__namedParameters?: *`object`*): [RBAC]()
 
-*Defined in index.ts:45*
+*Defined in index.ts:44*
 
 RBAC constructor
 
 **Parameters:**
 
-| Name | Type | Description |
+**`Default value` __namedParameters: `object`**
+
+| Name | Type | Default value |
 | ------ | ------ | ------ |
-| options | [Options](interfaces/rbac.options.md) |  RBAC options |
+| memoize | `boolean` | true |
+| roles | `object` | - |
 
 **Returns:** [RBAC]()
 
@@ -83,24 +87,22 @@ ___
 
 ###  add
 
-▸ **add**(_role: *`string`*, _resource: *`string`*, _permissions: *`Array`<`string`> \| `string`*, _when?: *[WhenFn](#whenfn)*): `void`
+▸ **add**(role: *`string`*, resource: *`string`*, operation: *`string`*, when?: *[WhenFn](#whenfn)*): `void`
 
-*Defined in index.ts:94*
+*Defined in index.ts:92*
 
 Adds new role to rules.
 
-*__todo__*: Not implemented yet
-
-*__version__*: next
+*__version__*: 1.1.X
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| _role | `string` |
-| _resource | `string` |
-| _permissions | `Array`<`string`> \| `string` |
-| `Optional` _when | [WhenFn](#whenfn) |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| role | `string` |  user role |
+| resource | `string` |  resource to access |
+| operation | `string` |  allowed operation |
+| `Optional` when | [WhenFn](#whenfn) |  function for additional checks |
 
 **Returns:** `void`
 
@@ -113,7 +115,7 @@ ___
 
 ▸ **can**(role: *`string`*, resource: *`string`*, operation: *`string`*, context: *`any`*): `Promise`<`boolean`>
 
-*Defined in index.ts:110*
+*Defined in index.ts:150*
 
 Checks if user can perform operation without checking when condition.
 
@@ -130,7 +132,7 @@ Checks if user can perform operation without checking when condition.
 **Returns:** `boolean`
 true if role has access to resources
 
-*Defined in index.ts:121*
+*Defined in index.ts:162*
 
 Checks if user can perform operation with checking when condition if it's provided.
 
@@ -147,6 +149,29 @@ Checks if user can perform operation with checking when condition if it's provid
 
 **Returns:** `Promise`<`boolean`>
 true if role has access to resources.
+
+___
+<a id="remove"></a>
+
+###  remove
+
+▸ **remove**(role: *`string`*, resource?: *`string`*, operation?: *`string`*): `void`
+
+*Defined in index.ts:113*
+
+Remove rule(s).
+
+*__version__*: 1.1.X
+
+**Parameters:**
+
+| Name | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| role | `string` | - |  user role |
+| `Default value` resource | `string` | &quot;*&quot; |  resource to access |
+| `Default value` operation | `string` | &quot;*&quot; |  operation |
+
+**Returns:** `void`
 
 ___
 

@@ -24,7 +24,7 @@
 
 **● name**: *`string`*
 
-*Defined in index.ts:183*
+*Defined in index.ts:224*
 
 ___
 <a id="operation"></a>
@@ -33,7 +33,7 @@ ___
 
 **● operation**: *`undefined` \| `string`*
 
-*Defined in index.ts:184*
+*Defined in index.ts:225*
 
 ___
 <a id="when"></a>
@@ -42,7 +42,7 @@ ___
 
 **● when**: *[WhenFn](../#whenfn)*
 
-*Defined in index.ts:185*
+*Defined in index.ts:226*
 
 ___
 

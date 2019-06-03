@@ -23,7 +23,7 @@
 
 **● can**: *`Array`<`string` \| [ResourcePermission](rbac.resourcepermission.md)>*
 
-*Defined in index.ts:202*
+*Defined in index.ts:243*
 
 List of resource and permissions.
 
@@ -36,7 +36,7 @@ ___
 
 **● inherits**: *`Array`<`string`>*
 
-*Defined in index.ts:206*
+*Defined in index.ts:247*
 
 Optionally extend permissions from other roles.
 
