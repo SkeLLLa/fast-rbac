@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://gitlab.com/m03geek/fast-rbac/compare/v1.1.5...v1.1.6) (2019-06-03)
+
+
+
 ### [1.1.5](https://gitlab.com/m03geek/fast-rbac/compare/v1.1.4...v1.1.5) (2019-06-03)
 
 
