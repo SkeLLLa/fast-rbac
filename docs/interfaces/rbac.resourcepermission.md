@@ -2,6 +2,8 @@
 
 # Interface: ResourcePermission
 
+Resoure permission.
+
 ## Hierarchy
 
 **ResourcePermission**
@@ -24,7 +26,13 @@
 
 **● name**: *`string`*
 
-*Defined in index.ts:224*
+*Defined in index.ts:268*
+
+Resourece name or resource with operation.
+
+*__example__*: "foo"
+
+*__example__*: "foo:read"
 
 ___
 <a id="operation"></a>
@@ -33,7 +41,11 @@ ___
 
 **● operation**: *`undefined` \| `string`*
 
-*Defined in index.ts:225*
+*Defined in index.ts:273*
+
+Operation name.
+
+*__example__*: "read"
 
 ___
 <a id="when"></a>
@@ -42,7 +54,11 @@ ___
 
 **● when**: *[WhenFn](../#whenfn)*
 
-*Defined in index.ts:226*
+*Defined in index.ts:278*
+
+Dynamic condition check function.
+
+*__see__*: [RBAC.WhenFn](../#whenfn)
 
 ___
 

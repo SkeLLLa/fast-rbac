@@ -41,7 +41,9 @@
 
 **Ƭ WhenFn**: *`function`*
 
-*Defined in index.ts:210*
+*Defined in index.ts:214*
+
+Dynamic condition check function.
 
 #### Type declaration
 ▸(context: *`any`*): `boolean` \| `Promise`<`boolean`>
@@ -62,7 +64,7 @@ ___
 
 ###  constructor
 
-⊕ **new RBAC**(__namedParameters?: *`object`*): [RBAC]()
+⊕ **new RBAC**(options?: *[Options](interfaces/rbac.options.md)*): [RBAC]()
 
 *Defined in index.ts:44*
 
@@ -70,12 +72,9 @@ RBAC constructor
 
 **Parameters:**
 
-**`Default value` __namedParameters: `object`**
-
-| Name | Type | Default value |
-| ------ | ------ | ------ |
-| memoize | `boolean` | true |
-| roles | `object` | - |
+| Name | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| `Default value` options | [Options](interfaces/rbac.options.md) |  {} |  RBAC options |
 
 **Returns:** [RBAC]()
 
@@ -89,7 +88,7 @@ ___
 
 ▸ **add**(role: *`string`*, resource: *`string`*, operation: *`string`*, when?: *[WhenFn](#whenfn)*): `void`
 
-*Defined in index.ts:92*
+*Defined in index.ts:93*
 
 Adds new role to rules.
 
@@ -115,7 +114,7 @@ ___
 
 ▸ **can**(role: *`string`*, resource: *`string`*, operation: *`string`*, context: *`any`*): `Promise`<`boolean`>
 
-*Defined in index.ts:150*
+*Defined in index.ts:151*
 
 Checks if user can perform operation without checking when condition.
 
@@ -132,7 +131,7 @@ Checks if user can perform operation without checking when condition.
 **Returns:** `boolean`
 true if role has access to resources
 
-*Defined in index.ts:162*
+*Defined in index.ts:163*
 
 Checks if user can perform operation with checking when condition if it's provided.
 
@@ -157,7 +156,7 @@ ___
 
 ▸ **remove**(role: *`string`*, resource?: *`string`*, operation?: *`string`*): `void`
 
-*Defined in index.ts:113*
+*Defined in index.ts:114*
 
 Remove rule(s).
 

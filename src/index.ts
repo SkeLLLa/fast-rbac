@@ -47,7 +47,8 @@ class RBAC {
    * RBAC constructor
    * @param options RBAC options
    */
-  constructor({roles = {}, memoize = true}: RBAC.Options = {}) {
+  constructor(options: RBAC.Options = {}) {
+    const {roles = {}, memoize = true} = options;
     this._memoize = memoize;
 
     for (const [roleName, permissions] of Object.entries(roles)) {
@@ -207,24 +208,78 @@ class RBAC {
 }
 
 namespace RBAC {
+  /**
+   * Dynamic condition check function.
+   */
   export type WhenFn = (context: any) => boolean | Promise<boolean>;
+  /**
+   * Interherence references.
+   * @see {@link RBAC.RoleRules}
+   */
   export interface Refs {
+    /**
+     * Role rules.
+     * {@link (RBAC:namespace).RoleRules}
+     */
     [roleName: string]: RoleRules;
   }
+  /**
+   * Operation permission list.
+   */
   export interface OperationRules {
+    /**
+     * Operation permission.
+     * @description `true` if allowed or `function` if need additional dynamic checks
+     * @see {@link RBAC.WhenFn}
+     */
     [operationName: string]: boolean | WhenFn;
   }
+  /**
+   * Resource operations list.
+   * @type Object<string, {@link RBAC.OperationRules}>
+   * @see {@link RBAC.OperationRules}
+   */
   export interface ResourceRules {
+    /**
+     * Resoure operation.
+     */
     [resourceName: string]: OperationRules;
   }
+  /**
+   * Role's resources list.
+   * @type Object<string, {@link RBAC.ResourceRules}>
+   * @see {@link RBAC.ResourceRules}
+   */
   export interface RoleRules {
+    /**
+     * Resource permissions list.
+     */
     [roleName: string]: ResourceRules;
   }
+  /**
+   * Resoure permission.
+   */
   export interface ResourcePermission {
+    /**
+     * Resourece name or resource with operation.
+     * @example "foo"
+     * @example "foo:read"
+     */
     name: string;
+    /**
+     * Operation name.
+     * @example "read"
+     */
     operation?: string;
+    /**
+     * Dynamic condition check function.
+     * @see {@link RBAC.WhenFn}
+     */
     when?: WhenFn;
   }
+  /**
+   * List of RBAC rules and inherited roles.
+   */
   export interface RulesObject {
     /**
      * List of resource and permissions.
@@ -238,7 +293,7 @@ namespace RBAC {
      *     return ctx.user.id === ctx.obj.creatorId
      *   }
      * }]
-     *
+     * @see {@link RBAC.ResourcePermission}
      */
     can: Array<string | ResourcePermission>;
     /**
@@ -246,15 +301,23 @@ namespace RBAC {
      */
     inherits?: Array<string>;
   }
+  /**
+   * RBAC options.
+   */
   export interface Options {
     /**
-     * Initial roles with permissions.
+     * List of roles and their permissions.
+     * @type Object<string, {@link RBAC.RulesObject}>
+     * @see {@link RBAC.RulesObject}
      */
     roles?: {
+      /**
+       * Role and it's permissions.
+       */
       [roleName: string]: RBAC.RulesObject;
     };
     /**
-     * If true makes wildcard matches faster
+     * If true makes wildcard matches faster.
      * @default true
      */
     memoize?: boolean;

@@ -2,6 +2,8 @@
 
 # Interface: Options
 
+RBAC options.
+
 ## Hierarchy
 
 **Options**
@@ -23,9 +25,9 @@
 
 **● memoize**: *`undefined` \| `false` \| `true`*
 
-*Defined in index.ts:260*
+*Defined in index.ts:323*
 
-If true makes wildcard matches faster
+If true makes wildcard matches faster.
 
 *__default__*: true
 
@@ -36,9 +38,13 @@ ___
 
 **● roles**: *`undefined` \| `object`*
 
-*Defined in index.ts:253*
+*Defined in index.ts:313*
 
-Initial roles with permissions.
+List of roles and their permissions.
+
+*__type__*: Object<string, [RBAC.RulesObject](rbac.rulesobject.md)\>
+
+*__see__*: [RBAC.RulesObject](rbac.rulesobject.md)
 
 ___
 
