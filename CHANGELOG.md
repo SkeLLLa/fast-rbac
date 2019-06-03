@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://gitlab.com/m03geek/fast-rbac/compare/v1.1.2...v1.1.3) (2019-06-03)
+
+
+### Tests
+
+* **coverage:** add codecov for npm ([35dd158](https://gitlab.com/m03geek/fast-rbac/commit/35dd158))
+
+
+
 ### [1.1.2](https://gitlab.com/m03geek/fast-rbac/compare/v1.1.1...v1.1.2) (2019-06-03)
 
 
