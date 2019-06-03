@@ -88,11 +88,18 @@ const a = new RBAC({
   },
 });
 
-console.log(a.can('user', 'dog', 'read'));
+console.log(a.can('user', 'dog', 'read')); // true
 
 (async () => {
-  console.log(await a.can('anon', 'cat', 'read', {color: 'red'}));
+  console.log(await a.can('anon', 'cat', 'read', {color: 'red'})); // true
 })()
+
+a.add('someone', 'something', 'read');
+console.log(a.can('someone', 'something', 'read')); // true
+console.log(a.can('someone', 'something', 'write')); // false
+a.remove('someone', 'something', 'read');
+console.log(a.can('someone', 'something', 'read')); // false
+
 ```
 
 <sub>[Back to top](#toc)</sub>
@@ -101,8 +108,9 @@ console.log(a.can('user', 'dog', 'read'));
 
 PRs welcome!
 
-- [ ] Add/modify/delete roles in runtime
-- [ ] Add some unit tests
+- [X] Add/delete roles in runtime
+- [X] Add some unit tests
+- [ ] Add possibility to add/delete roles inherits
 - [ ] Deal with circular role interherence (but I'm totally ok with callstack error)
 
 ## Docs
