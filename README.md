@@ -30,6 +30,7 @@ Main rules:
   - [ToC](#toc)
   - [Installation](#installation)
   - [Features and requirements](#features-and-requirements)
+    - [Benchmark results](#benchmark-results)
   - [Usage](#usage)
   - [ToDo List](#todo-list)
   - [Docs](#docs)
@@ -52,10 +53,27 @@ npm i fast-rbac --save
 * Inheritance support
 * Typescript support
 * Prebuilt browser amd and system modules
+* It's fast
 
 --- 
 
 * Node.js `>=8.0.0`.
+
+### Benchmark results
+
+So how fast is it? Here are results from simple benchmark with 3 roles.
+
+```
+@rbac/rbac x 46,003 ops/sec ±0.48% (87 runs sampled)
+rbac:no_wildcard_support x 95,564 ops/sec ±1.55% (84 runs sampled)
+easy-rbac x 45,884 ops/sec ±0.74% (89 runs sampled)
+fast-rbac x 1,516,366 ops/sec ±0.38% (97 runs sampled)
+fast-rbac:defer x 1,037,149 ops/sec ±0.71% (86 runs sampled)
+```
+
+Benchmark code is available in `benchmark` directory. 
+
+For more details refer to [benchmark doc](benchmark/BENCHMARK.md).
 
 <sub>[Back to top](#toc)</sub>
 

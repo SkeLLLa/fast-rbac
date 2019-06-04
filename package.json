@@ -35,6 +35,8 @@
     "test": "npm audit || true && npm run lint && npm run unit",
     "unit": "jest",
     "postunit": "codecov",
+    "prebenchmark": "npm i --no-save easy-rbac @rbac/rbac rbac benchmark",
+    "benchmark": "node benchmark/index.js",
     "build": "npm run build:node && npm run build:browser",
     "build:node": "tsc",
     "build:browser": "npm run build:browser:amd && npm run build:browser:system",
