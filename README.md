@@ -69,6 +69,8 @@ Whithout `context` the function `when` will be not executed and `can` will retur
 import RBAC from 'fast-rbac';
 // or
 // const {RBAC} = require('fast-rbac');
+// or
+// const RBAC = require('fast-rbac').default;
 
 const a = new RBAC({
   roles: {
