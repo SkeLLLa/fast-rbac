@@ -25,7 +25,7 @@ List of RBAC rules and inherited roles.
 
 **● can**: *`Array`<`string` \| [ResourcePermission](rbac.resourcepermission.md)>*
 
-*Defined in index.ts:298*
+*Defined in index.ts:300*
 
 List of resource and permissions.
 
@@ -40,7 +40,7 @@ ___
 
 **● inherits**: *`Array`<`string`>*
 
-*Defined in index.ts:302*
+*Defined in index.ts:304*
 
 Optionally extend permissions from other roles.
 

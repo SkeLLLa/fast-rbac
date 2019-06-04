@@ -9,6 +9,9 @@
 [![Build Status](https://gitlab.com/m03geek/fast-rbac/badges/master/pipeline.svg)](https://gitlab.com/m03geek/fast-rbac/commits/master)
 [![License](https://img.shields.io/npm/l/fast-rbac.svg)](https://gitlab.com/m03geek/fast-rbac/blob/master/LICENSE)
 [![Codecov](https://img.shields.io/codecov/c/gl/m03geek/fast-rbac.svg)](https://codecov.io/gl/m03geek/fast-rbac)
+[![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/SkeLLLa/fast-rbac.svg)](https://lgtm.com/projects/g/SkeLLLa/fast-rbac/)
+[![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/SkeLLLa/fast-rbac.svg)](https://lgtm.com/projects/g/SkeLLLa/fast-rbac/)
+
 <!-- [![Coverage Status](https://gitlab.com/m03geek/fast-rbac/badges/master/coverage.svg)](https://gitlab.com/m03geek/fast-rbac/commits/master) -->
 </div>
 

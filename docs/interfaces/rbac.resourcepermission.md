@@ -26,7 +26,7 @@ Resoure permission.
 
 **● name**: *`string`*
 
-*Defined in index.ts:268*
+*Defined in index.ts:270*
 
 Resourece name or resource with operation.
 
@@ -41,7 +41,7 @@ ___
 
 **● operation**: *`undefined` \| `string`*
 
-*Defined in index.ts:273*
+*Defined in index.ts:275*
 
 Operation name.
 
@@ -54,7 +54,7 @@ ___
 
 **● when**: *[WhenFn](../#whenfn)*
 
-*Defined in index.ts:278*
+*Defined in index.ts:280*
 
 Dynamic condition check function.
 

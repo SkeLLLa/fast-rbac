@@ -25,7 +25,7 @@ RBAC options.
 
 **● memoize**: *`undefined` \| `false` \| `true`*
 
-*Defined in index.ts:323*
+*Defined in index.ts:325*
 
 If true makes wildcard matches faster.
 
@@ -38,7 +38,7 @@ ___
 
 **● roles**: *`undefined` \| `object`*
 
-*Defined in index.ts:313*
+*Defined in index.ts:315*
 
 List of roles and their permissions.
 

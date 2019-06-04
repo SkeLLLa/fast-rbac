@@ -41,7 +41,7 @@
 
 **Ƭ WhenFn**: *`function`*
 
-*Defined in index.ts:214*
+*Defined in index.ts:216*
 
 Dynamic condition check function.
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **add**(role: *`string`*, resource: *`string`*, operation: *`string`*, when?: *[WhenFn](#whenfn)*): `void`
 
-*Defined in index.ts:93*
+*Defined in index.ts:95*
 
 Adds new role to rules.
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **can**(role: *`string`*, resource: *`string`*, operation: *`string`*, context: *`any`*): `Promise`<`boolean`>
 
-*Defined in index.ts:151*
+*Defined in index.ts:153*
 
 Checks if user can perform operation without checking when condition.
 
@@ -131,7 +131,7 @@ Checks if user can perform operation without checking when condition.
 **Returns:** `boolean`
 true if role has access to resources
 
-*Defined in index.ts:163*
+*Defined in index.ts:165*
 
 Checks if user can perform operation with checking when condition if it's provided.
 
@@ -156,7 +156,7 @@ ___
 
 ▸ **remove**(role: *`string`*, resource?: *`string`*, operation?: *`string`*): `void`
 
-*Defined in index.ts:114*
+*Defined in index.ts:116*
 
 Remove rule(s).
 
