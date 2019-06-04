@@ -67,6 +67,9 @@ Whithout `context` the function `when` will be not executed and `can` will retur
 
 ```js
 import RBAC from 'fast-rbac';
+// or
+// const {RBAC} = require('fast-rbac');
+
 const a = new RBAC({
   roles: {
     user: {can: ['cat:create', 'dog:*', {name: 'foo', operation: 'read'}]},

@@ -5,7 +5,7 @@ const SEPARATOR = ':';
 /**
  * RBAC classref
  */
-class RBAC {
+export class RBAC {
   /**
    * RBAC roles object
    */
@@ -207,7 +207,7 @@ class RBAC {
   }
 }
 
-namespace RBAC {
+export namespace RBAC {
   /**
    * Dynamic condition check function.
    */
