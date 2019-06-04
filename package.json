@@ -1,6 +1,6 @@
 {
   "name": "fast-rbac",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Fast and simple RBAC lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
