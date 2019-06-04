@@ -23,8 +23,8 @@ export class RBAC {
     for (const refRole of Object.keys(refs)) {
       mergeRoles(
         refsToCompile,
-        refs[refRole],
-        this._collectRefs(this._refs[refRole])
+        this._collectRefs(this._refs[refRole]),
+        refs[refRole]
       );
     }
     return refsToCompile;
@@ -52,22 +52,24 @@ export class RBAC {
     this._memoize = memoize;
 
     for (const [roleName, permissions] of Object.entries(roles)) {
-      this._rules[roleName] = this._rules[roleName] || {};
-      const resRule = this._rules[roleName];
-      for (const permission of permissions.can) {
-        if (typeof permission === 'string') {
-          const [resource, operation = '*'] = permission.split(SEPARATOR);
-          resRule[resource] = resRule[resource] || {};
-          const opRule = resRule[resource];
-          opRule[operation] = true;
-        } else {
-          const [resource, operation] = permission.operation
-            ? [permission.name, permission.operation]
-            : permission.name.split(SEPARATOR);
-          resRule[resource] = resRule[resource] || {};
-          const opRule = resRule[resource];
-          opRule[operation] =
-            typeof permission.when !== 'undefined' ? permission.when : true;
+      if (permissions.can.length !== 0) {
+        this._rules[roleName] = this._rules[roleName] || {};
+        const resRule = this._rules[roleName];
+        for (const permission of permissions.can) {
+          if (typeof permission === 'string') {
+            const [resource, operation = '*'] = permission.split(SEPARATOR);
+            resRule[resource] = resRule[resource] || {};
+            const opRule = resRule[resource];
+            opRule[operation] = true;
+          } else {
+            const [resource, operation] = permission.operation
+              ? [permission.name, permission.operation]
+              : permission.name.split(SEPARATOR);
+            resRule[resource] = resRule[resource] || {};
+            const opRule = resRule[resource];
+            opRule[operation] =
+              typeof permission.when !== 'undefined' ? permission.when : true;
+          }
         }
       }
       if (permissions.inherits) {
