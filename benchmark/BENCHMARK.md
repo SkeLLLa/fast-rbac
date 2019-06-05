@@ -48,5 +48,5 @@ So as you can see `fast-rbac` in "simple" (or you may call it "sync") mode is al
 In "async" mode with promises it's a bit slower, however that result is 20 times faster than other libs that support wildcard rules and 10 times faster than `rbac` which doesn't support it.
 
 This test demonstrates general picture. Adding tests with roles that extend each other will not change it.
-`fast-rbac` will remain at the same performance, because it compiles roles and time complexity remains the same: O(n).
+`fast-rbac` will remain at the same performance, because it compiles roles and time complexity remains the same: O(1).
 But other libs don't do such trick, so their results may be even worse.
