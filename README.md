@@ -30,6 +30,7 @@ Main rules:
   - [ToC](#toc)
   - [Installation](#installation)
   - [Features and requirements](#features-and-requirements)
+    - [Browser support](#browser-support)
     - [Benchmark results](#benchmark-results)
   - [Usage](#usage)
   - [ToDo List](#todo-list)
@@ -58,6 +59,14 @@ npm i fast-rbac --save
 --- 
 
 * Node.js `>=8.0.0`.
+
+### Browser support
+
+For using this lib in browser it provides three options:
+
+* AMD-style: `dist/browser/rbac.bundle.amd.js`
+* System-style: `dist/browser/rbac.bundle.amd.js`
+* ES6: `dist/browser/index.js` (`module` property is set for using with rollup and webpack)
 
 ### Benchmark results
 
