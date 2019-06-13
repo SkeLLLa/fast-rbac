@@ -40,7 +40,7 @@
     "benchmark": "node benchmark/index.js",
     "build": "npm run build:node && npm run build:browser",
     "build:node": "tsc",
-    "build:browser": "npm run build:browser:es6 && build:browser:amd && npm run build:browser:system",
+    "build:browser": "npm run build:browser:es6 && npm run build:browser:amd && npm run build:browser:system",
     "build:browser:amd": "tsc -p browser.tsconfig.json -m amd -t es6 --outFile dist/browser/rbac.bundle.amd.js",
     "build:browser:es6": "tsc -p browser.tsconfig.json -m es6 -t es6 --outDir dist/browser",
     "build:browser:system": "tsc -p browser.tsconfig.json -m system -t es6 --outFile dist/browser/rbac.bundle.system.js",
