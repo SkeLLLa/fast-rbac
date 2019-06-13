@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://gitlab.com/m03geek/fast-rbac/compare/v1.1.10...v1.2.0) (2019-06-13)
+
+
+### Features
+
+* add es6 module ([649c5f0](https://gitlab.com/m03geek/fast-rbac/commit/649c5f0))
+
+
+
 ### [1.1.10](https://gitlab.com/m03geek/fast-rbac/compare/v1.1.9...v1.1.10) (2019-06-04)
 
 
