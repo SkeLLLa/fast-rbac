@@ -1,4 +1,6 @@
-[fast-rbac](../README.md) > [ResourcePermission](../interfaces/rbac.resourcepermission.md)
+> **[fast-rbac](../README.md)**
+
+[RBAC](../README.md) / [ResourcePermission](rbac.resourcepermission.md) /
 
 # Interface: ResourcePermission
 
@@ -6,59 +8,50 @@ Resoure permission.
 
 ## Hierarchy
 
-**ResourcePermission**
+* **ResourcePermission**
 
-## Index
+### Index
 
-### Properties
+#### Properties
 
 * [name](rbac.resourcepermission.md#name)
-* [operation](rbac.resourcepermission.md#operation)
-* [when](rbac.resourcepermission.md#when)
-
----
+* [operation](rbac.resourcepermission.md#optional-operation)
+* [when](rbac.resourcepermission.md#optional-when)
 
 ## Properties
 
-<a id="name"></a>
-
 ###  name
 
-**● name**: *`string`*
+• **name**: *string*
 
-*Defined in index.ts:270*
+Defined in index.ts:270
 
 Resourece name or resource with operation.
 
-*__example__*: "foo"
+**`example`** "foo"
 
-*__example__*: "foo:read"
+**`example`** "foo:read"
 
 ___
-<a id="operation"></a>
 
-### `<Optional>` operation
+### `Optional` operation
 
-**● operation**: *`undefined` \| `string`*
+• **operation**? : *undefined | string*
 
-*Defined in index.ts:275*
+Defined in index.ts:275
 
 Operation name.
 
-*__example__*: "read"
+**`example`** "read"
 
 ___
-<a id="when"></a>
 
-### `<Optional>` when
+### `Optional` when
 
-**● when**: *[WhenFn](../#whenfn)*
+• **when**? : *[WhenFn](../README.md#static-whenfn)*
 
-*Defined in index.ts:280*
+Defined in index.ts:280
 
 Dynamic condition check function.
 
-*__see__*: [RBAC.WhenFn](../#whenfn)
-
-___
-
+**`see`** [RBAC.WhenFn](../README.md#static-whenfn)

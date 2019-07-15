@@ -1,23 +1,21 @@
-[fast-rbac](../README.md) > [RoleRules](../interfaces/rbac.rolerules.md)
+> **[fast-rbac](../README.md)**
+
+[RBAC](../README.md) / [RoleRules](rbac.rolerules.md) /
 
 # Interface: RoleRules
 
 Role's resources list.
 
-*__type__*: Object<string, [RBAC.ResourceRules](rbac.resourcerules.md)\>
+**`type`** Object<string, [RBAC.ResourceRules](rbac.resourcerules.md)>
 
-*__see__*: [RBAC.ResourceRules](rbac.resourcerules.md)
+**`see`** [RBAC.ResourceRules](rbac.resourcerules.md)
 
 ## Hierarchy
 
-**RoleRules**
+* **RoleRules**
 
 ## Indexable
 
-\[roleName: `string`\]:&nbsp;[ResourceRules](rbac.resourcerules.md)
+● \[▪ **roleName**: *string*\]: [ResourceRules](rbac.resourcerules.md)
+
 Resource permissions list.
-
-## Index
-
----
-

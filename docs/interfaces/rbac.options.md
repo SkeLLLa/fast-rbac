@@ -1,4 +1,6 @@
-[fast-rbac](../README.md) > [Options](../interfaces/rbac.options.md)
+> **[fast-rbac](../README.md)**
+
+[RBAC](../README.md) / [Options](rbac.options.md) /
 
 # Interface: Options
 
@@ -6,45 +8,37 @@ RBAC options.
 
 ## Hierarchy
 
-**Options**
+* **Options**
 
-## Index
+### Index
 
-### Properties
+#### Properties
 
-* [memoize](rbac.options.md#memoize)
-* [roles](rbac.options.md#roles)
-
----
+* [memoize](rbac.options.md#optional-memoize)
+* [roles](rbac.options.md#optional-roles)
 
 ## Properties
 
-<a id="memoize"></a>
+### `Optional` memoize
 
-### `<Optional>` memoize
+• **memoize**? : *undefined | false | true*
 
-**● memoize**: *`undefined` \| `false` \| `true`*
-
-*Defined in index.ts:325*
+Defined in index.ts:325
 
 If true makes wildcard matches faster.
 
-*__default__*: true
+**`default`** true
 
 ___
-<a id="roles"></a>
 
-### `<Optional>` roles
+### `Optional` roles
 
-**● roles**: *`undefined` \| `object`*
+• **roles**? : *undefined | object*
 
-*Defined in index.ts:315*
+Defined in index.ts:315
 
 List of roles and their permissions.
 
-*__type__*: Object<string, [RBAC.RulesObject](rbac.rulesobject.md)\>
+**`type`** Object<string, [RBAC.RulesObject](rbac.rulesobject.md)>
 
-*__see__*: [RBAC.RulesObject](rbac.rulesobject.md)
-
-___
-
+**`see`** [RBAC.RulesObject](rbac.rulesobject.md)

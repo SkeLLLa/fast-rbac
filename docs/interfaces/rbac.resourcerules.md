@@ -1,23 +1,21 @@
-[fast-rbac](../README.md) > [ResourceRules](../interfaces/rbac.resourcerules.md)
+> **[fast-rbac](../README.md)**
+
+[RBAC](../README.md) / [ResourceRules](rbac.resourcerules.md) /
 
 # Interface: ResourceRules
 
 Resource operations list.
 
-*__type__*: Object<string, [RBAC.OperationRules](rbac.operationrules.md)\>
+**`type`** Object<string, [RBAC.OperationRules](rbac.operationrules.md)>
 
-*__see__*: [RBAC.OperationRules](rbac.operationrules.md)
+**`see`** [RBAC.OperationRules](rbac.operationrules.md)
 
 ## Hierarchy
 
-**ResourceRules**
+* **ResourceRules**
 
 ## Indexable
 
-\[resourceName: `string`\]:&nbsp;[OperationRules](rbac.operationrules.md)
+● \[▪ **resourceName**: *string*\]: [OperationRules](rbac.operationrules.md)
+
 Resoure operation.
-
-## Index
-
----
-

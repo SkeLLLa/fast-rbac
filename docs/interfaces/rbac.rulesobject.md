@@ -1,4 +1,6 @@
-[fast-rbac](../README.md) > [RulesObject](../interfaces/rbac.rulesobject.md)
+> **[fast-rbac](../README.md)**
+
+[RBAC](../README.md) / [RulesObject](rbac.rulesobject.md) /
 
 # Interface: RulesObject
 
@@ -6,43 +8,44 @@ List of RBAC rules and inherited roles.
 
 ## Hierarchy
 
-**RulesObject**
+* **RulesObject**
 
-## Index
+### Index
 
-### Properties
+#### Properties
 
 * [can](rbac.rulesobject.md#can)
-* [inherits](rbac.rulesobject.md#inherits)
-
----
+* [inherits](rbac.rulesobject.md#optional-inherits)
 
 ## Properties
 
-<a id="can"></a>
-
 ###  can
 
-**● can**: *`Array`<`string` \| [ResourcePermission](rbac.resourcepermission.md)>*
+• **can**: *`Array<string | ResourcePermission>`*
 
-*Defined in index.ts:300*
+Defined in index.ts:300
 
 List of resource and permissions.
 
-*__example__*: can: \["foo:create", "bar:_", "_:read"\] can: \["\*"\] can: \[{ name: "baz", operation: "create", when: (ctx) => { return ctx.user.id === ctx.obj.creatorId } }\]
+**`example`** 
+can: ["foo:create", "bar:*", "*:read"]
+can: ["*"]
+can: [{
+  name: "baz",
+  operation: "create",
+  when: (ctx) => {
+    return ctx.user.id === ctx.obj.creatorId
+  }
+}]
 
-*__see__*: [RBAC.ResourcePermission](rbac.resourcepermission.md)
+**`see`** [RBAC.ResourcePermission](rbac.resourcepermission.md)
 
 ___
-<a id="inherits"></a>
 
-### `<Optional>` inherits
+### `Optional` inherits
 
-**● inherits**: *`Array`<`string`>*
+• **inherits**? : *`Array<string>`*
 
-*Defined in index.ts:304*
+Defined in index.ts:304
 
 Optionally extend permissions from other roles.
-
-___
-

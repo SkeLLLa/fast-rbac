@@ -1,13 +1,16 @@
+> **[fast-rbac](README.md)**
 
-#  RBAC
+[RBAC](README.md) /
+
+RBAC classref
 
 ## Hierarchy
 
-**RBAC**
+* **RBAC**
 
-## Index
+### Index
 
-### Interfaces
+#### Interfaces
 
 * [OperationRules](interfaces/rbac.operationrules.md)
 * [Options](interfaces/rbac.options.md)
@@ -17,160 +20,144 @@
 * [RoleRules](interfaces/rbac.rolerules.md)
 * [RulesObject](interfaces/rbac.rulesobject.md)
 
-### Type aliases
+#### Type aliases
 
-* [WhenFn](#whenfn)
+* [WhenFn](README.md#static-whenfn)
 
-### Constructors
+#### Constructors
 
-* [constructor](#constructor)
+* [constructor](README.md#constructor)
 
-### Methods
+#### Methods
 
-* [add](#add)
-* [can](#can)
-* [remove](#remove)
-
----
+* [add](README.md#add)
+* [can](README.md#can)
+* [remove](README.md#remove)
 
 ## Type aliases
 
-<a id="whenfn"></a>
+### `Static` WhenFn
 
-### `<Static>` WhenFn
+Ƭ **WhenFn**: *function*
 
-**Ƭ WhenFn**: *`function`*
-
-*Defined in index.ts:216*
+Defined in index.ts:216
 
 Dynamic condition check function.
 
-#### Type declaration
-▸(context: *`any`*): `boolean` \| `Promise`<`boolean`>
+#### Type declaration:
+
+▸ (`context`: any): *boolean | `Promise<boolean>`*
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| context | `any` |
-
-**Returns:** `boolean` \| `Promise`<`boolean`>
-
-___
+Name | Type |
+------ | ------ |
+`context` | any |
 
 ## Constructors
 
-<a id="constructor"></a>
-
 ###  constructor
 
-⊕ **new RBAC**(options?: *[Options](interfaces/rbac.options.md)*): [RBAC]()
+\+ **new RBAC**(`options`: [Options](interfaces/rbac.options.md)): *[RBAC](README.md)*
 
-*Defined in index.ts:44*
+Defined in index.ts:44
 
 RBAC constructor
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| `Default value` options | [Options](interfaces/rbac.options.md) |  {} |  RBAC options |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`options` | [Options](interfaces/rbac.options.md) |  {} | RBAC options  |
 
-**Returns:** [RBAC]()
-
-___
+**Returns:** *[RBAC](README.md)*
 
 ## Methods
 
-<a id="add"></a>
-
 ###  add
 
-▸ **add**(role: *`string`*, resource: *`string`*, operation: *`string`*, when?: *[WhenFn](#whenfn)*): `void`
+▸ **add**(`role`: string, `resource`: string, `operation`: string, `when?`: [WhenFn](README.md#static-whenfn)): *void*
 
-*Defined in index.ts:95*
+Defined in index.ts:95
 
 Adds new role to rules.
 
-*__version__*: 1.1.X
+**`version`** 1.1.X
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| role | `string` |  user role |
-| resource | `string` |  resource to access |
-| operation | `string` |  allowed operation |
-| `Optional` when | [WhenFn](#whenfn) |  function for additional checks |
+Name | Type | Description |
+------ | ------ | ------ |
+`role` | string | user role |
+`resource` | string | resource to access |
+`operation` | string | allowed operation |
+`when?` | [WhenFn](README.md#static-whenfn) | function for additional checks  |
 
-**Returns:** `void`
+**Returns:** *void*
 
 ___
-<a id="can"></a>
 
 ###  can
 
-▸ **can**(role: *`string`*, resource: *`string`*, operation?: *`undefined` \| `string`*): `boolean`
+▸ **can**(`role`: string, `resource`: string, `operation?`: undefined | string): *boolean*
 
-▸ **can**(role: *`string`*, resource: *`string`*, operation: *`string`*, context: *`any`*): `Promise`<`boolean`>
-
-*Defined in index.ts:153*
+Defined in index.ts:153
 
 Checks if user can perform operation without checking when condition.
 
-*__version__*: 1.X.X
+**`version`** 1.X.X
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| role | `string` |  user role |
-| resource | `string` |  resource to access |
-| `Optional` operation | `undefined` \| `string` |  operation on resource |
+Name | Type | Description |
+------ | ------ | ------ |
+`role` | string | user role |
+`resource` | string | resource to access |
+`operation?` | undefined \| string | operation on resource |
 
-**Returns:** `boolean`
+**Returns:** *boolean*
+
 true if role has access to resources
 
-*Defined in index.ts:165*
+▸ **can**(`role`: string, `resource`: string, `operation`: string, `context`: any): *`Promise<boolean>`*
+
+Defined in index.ts:165
 
 Checks if user can perform operation with checking when condition if it's provided.
 
-*__version__*: 1.X.X
+**`version`** 1.X.X
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| role | `string` |  user role |
-| resource | `string` |  resource to access |
-| operation | `string` |  operation on resource |
-| context | `any` |  context passed to when function, set it to null |
+Name | Type | Description |
+------ | ------ | ------ |
+`role` | string | user role |
+`resource` | string | resource to access |
+`operation` | string | operation on resource |
+`context` | any | context passed to when function, set it to null |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *`Promise<boolean>`*
+
 true if role has access to resources.
 
 ___
-<a id="remove"></a>
 
 ###  remove
 
-▸ **remove**(role: *`string`*, resource?: *`string`*, operation?: *`string`*): `void`
+▸ **remove**(`role`: string, `resource`: string, `operation`: string): *void*
 
-*Defined in index.ts:116*
+Defined in index.ts:116
 
 Remove rule(s).
 
-*__version__*: 1.1.X
+**`version`** 1.1.X
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| role | `string` | - |  user role |
-| `Default value` resource | `string` | &quot;*&quot; |  resource to access |
-| `Default value` operation | `string` | &quot;*&quot; |  operation |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`role` | string | - | user role |
+`resource` | string | "*" | resource to access |
+`operation` | string | "*" | operation  |
 
-**Returns:** `void`
-
-___
-
+**Returns:** *void*

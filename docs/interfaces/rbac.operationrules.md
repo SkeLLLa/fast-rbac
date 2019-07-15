@@ -1,4 +1,6 @@
-[fast-rbac](../README.md) > [OperationRules](../interfaces/rbac.operationrules.md)
+> **[fast-rbac](../README.md)**
+
+[RBAC](../README.md) / [OperationRules](rbac.operationrules.md) /
 
 # Interface: OperationRules
 
@@ -6,18 +8,14 @@ Operation permission list.
 
 ## Hierarchy
 
-**OperationRules**
+* **OperationRules**
 
 ## Indexable
 
-\[operationName: `string`\]:&nbsp;`boolean` \| [WhenFn](../#whenfn)
+● \[▪ **operationName**: *string*\]: boolean | [WhenFn](../README.md#static-whenfn)
+
 Operation permission.
 
-*__description__*: `true` if allowed or `function` if need additional dynamic checks
+**`description`** `true` if allowed or `function` if need additional dynamic checks
 
-*__see__*: [RBAC.WhenFn](../#whenfn)
-
-## Index
-
----
-
+**`see`** [RBAC.WhenFn](../README.md#static-whenfn)
