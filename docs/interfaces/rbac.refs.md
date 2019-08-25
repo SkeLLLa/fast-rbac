@@ -1,6 +1,6 @@
-> **[fast-rbac](../README.md)**
+**[fast-rbac](../README.md)**
 
-[RBAC](../README.md) / [Refs](rbac.refs.md) /
+[Globals]() › [RBAC](../README.md) › [Refs](rbac.refs.md)
 
 # Interface: Refs
 
@@ -14,7 +14,7 @@ Interherence references.
 
 ## Indexable
 
-● \[▪ **roleName**: *string*\]: [RoleRules](rbac.rolerules.md)
+* \[ **roleName**: *string*\]: [RoleRules](rbac.rolerules.md)
 
 Role rules.
 {@link (RBAC:namespace).RoleRules}

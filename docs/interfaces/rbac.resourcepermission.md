@@ -1,6 +1,6 @@
-> **[fast-rbac](../README.md)**
+**[fast-rbac](../README.md)**
 
-[RBAC](../README.md) / [ResourcePermission](rbac.resourcepermission.md) /
+[Globals]() › [RBAC](../README.md) › [ResourcePermission](rbac.resourcepermission.md)
 
 # Interface: ResourcePermission
 
@@ -10,9 +10,9 @@ Resoure permission.
 
 * **ResourcePermission**
 
-### Index
+## Index
 
-#### Properties
+### Properties
 
 * [name](rbac.resourcepermission.md#name)
 * [operation](rbac.resourcepermission.md#optional-operation)

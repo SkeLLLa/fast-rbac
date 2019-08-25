@@ -1,6 +1,6 @@
-> **[fast-rbac](../README.md)**
+**[fast-rbac](../README.md)**
 
-[RBAC](../README.md) / [ResourceRules](rbac.resourcerules.md) /
+[Globals]() › [RBAC](../README.md) › [ResourceRules](rbac.resourcerules.md)
 
 # Interface: ResourceRules
 
@@ -16,6 +16,6 @@ Resource operations list.
 
 ## Indexable
 
-● \[▪ **resourceName**: *string*\]: [OperationRules](rbac.operationrules.md)
+* \[ **resourceName**: *string*\]: [OperationRules](rbac.operationrules.md)
 
 Resoure operation.

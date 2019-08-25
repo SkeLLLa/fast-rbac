@@ -1,6 +1,6 @@
-> **[fast-rbac](../README.md)**
+**[fast-rbac](../README.md)**
 
-[RBAC](../README.md) / [Options](rbac.options.md) /
+[Globals]() › [RBAC](../README.md) › [Options](rbac.options.md)
 
 # Interface: Options
 
@@ -10,9 +10,9 @@ RBAC options.
 
 * **Options**
 
-### Index
+## Index
 
-#### Properties
+### Properties
 
 * [memoize](rbac.options.md#optional-memoize)
 * [roles](rbac.options.md#optional-roles)

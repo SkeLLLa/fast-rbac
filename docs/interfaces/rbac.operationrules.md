@@ -1,6 +1,6 @@
-> **[fast-rbac](../README.md)**
+**[fast-rbac](../README.md)**
 
-[RBAC](../README.md) / [OperationRules](rbac.operationrules.md) /
+[Globals]() › [RBAC](../README.md) › [OperationRules](rbac.operationrules.md)
 
 # Interface: OperationRules
 
@@ -12,7 +12,7 @@ Operation permission list.
 
 ## Indexable
 
-● \[▪ **operationName**: *string*\]: boolean | [WhenFn](../README.md#static-whenfn)
+* \[ **operationName**: *string*\]: boolean | [WhenFn](../README.md#static-whenfn)
 
 Operation permission.
 

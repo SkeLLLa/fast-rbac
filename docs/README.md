@@ -1,6 +1,6 @@
-> **[fast-rbac](README.md)**
+**[fast-rbac](README.md)**
 
-[RBAC](README.md) /
+[Globals]() › [RBAC](README.md)
 
 RBAC classref
 
@@ -8,9 +8,9 @@ RBAC classref
 
 * **RBAC**
 
-### Index
+## Index
 
-#### Interfaces
+### Interfaces
 
 * [OperationRules](interfaces/rbac.operationrules.md)
 * [Options](interfaces/rbac.options.md)
@@ -20,15 +20,15 @@ RBAC classref
 * [RoleRules](interfaces/rbac.rolerules.md)
 * [RulesObject](interfaces/rbac.rulesobject.md)
 
-#### Type aliases
+### Type aliases
 
 * [WhenFn](README.md#static-whenfn)
 
-#### Constructors
+### Constructors
 
 * [constructor](README.md#constructor)
 
-#### Methods
+### Methods
 
 * [add](README.md#add)
 * [can](README.md#can)
@@ -46,7 +46,7 @@ Dynamic condition check function.
 
 #### Type declaration:
 
-▸ (`context`: any): *boolean | `Promise<boolean>`*
+▸ (`context`: any): *boolean | Promise‹boolean›*
 
 **Parameters:**
 
@@ -119,7 +119,7 @@ Name | Type | Description |
 
 true if role has access to resources
 
-▸ **can**(`role`: string, `resource`: string, `operation`: string, `context`: any): *`Promise<boolean>`*
+▸ **can**(`role`: string, `resource`: string, `operation`: string, `context`: any): *Promise‹boolean›*
 
 Defined in index.ts:165
 
@@ -136,7 +136,7 @@ Name | Type | Description |
 `operation` | string | operation on resource |
 `context` | any | context passed to when function, set it to null |
 
-**Returns:** *`Promise<boolean>`*
+**Returns:** *Promise‹boolean›*
 
 true if role has access to resources.
 

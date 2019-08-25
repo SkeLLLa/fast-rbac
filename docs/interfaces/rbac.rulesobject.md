@@ -1,6 +1,6 @@
-> **[fast-rbac](../README.md)**
+**[fast-rbac](../README.md)**
 
-[RBAC](../README.md) / [RulesObject](rbac.rulesobject.md) /
+[Globals]() › [RBAC](../README.md) › [RulesObject](rbac.rulesobject.md)
 
 # Interface: RulesObject
 
@@ -10,9 +10,9 @@ List of RBAC rules and inherited roles.
 
 * **RulesObject**
 
-### Index
+## Index
 
-#### Properties
+### Properties
 
 * [can](rbac.rulesobject.md#can)
 * [inherits](rbac.rulesobject.md#optional-inherits)
@@ -21,7 +21,7 @@ List of RBAC rules and inherited roles.
 
 ###  can
 
-• **can**: *`Array<string | ResourcePermission>`*
+• **can**: *Array‹string | [ResourcePermission](rbac.resourcepermission.md)›*
 
 Defined in index.ts:300
 
@@ -44,7 +44,7 @@ ___
 
 ### `Optional` inherits
 
-• **inherits**? : *`Array<string>`*
+• **inherits**? : *Array‹string›*
 
 Defined in index.ts:304
 

@@ -1,6 +1,6 @@
-> **[fast-rbac](../README.md)**
+**[fast-rbac](../README.md)**
 
-[RBAC](../README.md) / [RoleRules](rbac.rolerules.md) /
+[Globals]() › [RBAC](../README.md) › [RoleRules](rbac.rolerules.md)
 
 # Interface: RoleRules
 
@@ -16,6 +16,6 @@ Role's resources list.
 
 ## Indexable
 
-● \[▪ **roleName**: *string*\]: [ResourceRules](rbac.resourcerules.md)
+* \[ **roleName**: *string*\]: [ResourceRules](rbac.resourcerules.md)
 
 Resource permissions list.
