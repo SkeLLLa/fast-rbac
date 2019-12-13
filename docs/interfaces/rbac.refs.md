@@ -1,6 +1,4 @@
-**[fast-rbac](../README.md)**
-
-[Globals]() › [RBAC](../README.md) › [Refs](rbac.refs.md)
+[fast-rbac](../README.md) › [RBAC](../classes/rbac.md) › [Refs](rbac.refs.md)
 
 # Interface: Refs
 

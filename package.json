@@ -46,8 +46,8 @@
     "postbuild:browser:es6": "rollup  dist/browser/index.js -c rollup.config.js",
     "build:browser:system": "tsc -p browser.tsconfig.json -m system -t es6 --outFile dist/browser/rbac.bundle.system.js",
     "prerelease": "npm run typedoc && git add -A ./docs",
-    "release": "git add -A && standard-version -A",
-    "typedoc": "rm -rf ./docs/* && typedoc --entryPoint RBAC --excludeExternals --name \"$npm_package_name\" --readme none --mode file --includeDeclarations --excludePrivate --theme markdown --out ./docs",
+    "release": "git add -A && standard-version -a",
+    "typedoc": "rm -rf ./docs/* && typedoc --excludeExternals --name \"$npm_package_name\" --readme none --mode file --includeDeclarations --excludePrivate --theme markdown --out ./docs",
     "docs": "documentation build dist/rbac.js --resolve=node -f md -o API.md"
   },
   "repository": {

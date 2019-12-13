@@ -1,6 +1,4 @@
-**[fast-rbac](../README.md)**
-
-[Globals]() › [RBAC](../README.md) › [Options](rbac.options.md)
+[fast-rbac](../README.md) › [RBAC](../classes/rbac.md) › [Options](rbac.options.md)
 
 # Interface: Options
 

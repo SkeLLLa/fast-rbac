@@ -1,6 +1,4 @@
-**[fast-rbac](../README.md)**
-
-[Globals]() › [RBAC](../README.md) › [ResourcePermission](rbac.resourcepermission.md)
+[fast-rbac](../README.md) › [RBAC](../classes/rbac.md) › [ResourcePermission](rbac.resourcepermission.md)
 
 # Interface: ResourcePermission
 
@@ -48,10 +46,10 @@ ___
 
 ### `Optional` when
 
-• **when**? : *[WhenFn](../README.md#static-whenfn)*
+• **when**? : *[WhenFn](../classes/rbac.md#static-whenfn)*
 
 Defined in index.ts:280
 
 Dynamic condition check function.
 
-**`see`** [RBAC.WhenFn](../README.md#static-whenfn)
+**`see`** [RBAC.WhenFn](../classes/rbac.md#static-whenfn)

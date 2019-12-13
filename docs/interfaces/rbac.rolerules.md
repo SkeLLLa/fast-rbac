@@ -1,6 +1,4 @@
-**[fast-rbac](../README.md)**
-
-[Globals]() › [RBAC](../README.md) › [RoleRules](rbac.rolerules.md)
+[fast-rbac](../README.md) › [RBAC](../classes/rbac.md) › [RoleRules](rbac.rolerules.md)
 
 # Interface: RoleRules
 

@@ -1,6 +1,4 @@
-**[fast-rbac](../README.md)**
-
-[Globals]() › [RBAC](../README.md) › [RulesObject](rbac.rulesobject.md)
+[fast-rbac](../README.md) › [RBAC](../classes/rbac.md) › [RulesObject](rbac.rulesobject.md)
 
 # Interface: RulesObject
 

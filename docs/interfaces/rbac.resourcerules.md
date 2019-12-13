@@ -1,6 +1,4 @@
-**[fast-rbac](../README.md)**
-
-[Globals]() › [RBAC](../README.md) › [ResourceRules](rbac.resourcerules.md)
+[fast-rbac](../README.md) › [RBAC](../classes/rbac.md) › [ResourceRules](rbac.resourcerules.md)
 
 # Interface: ResourceRules
 

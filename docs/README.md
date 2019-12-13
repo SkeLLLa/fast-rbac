@@ -1,163 +1,64 @@
-**[fast-rbac](README.md)**
+[fast-rbac](README.md)
 
-[Globals]() › [RBAC](README.md)
-
-RBAC classref
-
-## Hierarchy
-
-* **RBAC**
+# fast-rbac
 
 ## Index
 
-### Interfaces
+### Classes
 
-* [OperationRules](interfaces/rbac.operationrules.md)
-* [Options](interfaces/rbac.options.md)
-* [Refs](interfaces/rbac.refs.md)
-* [ResourcePermission](interfaces/rbac.resourcepermission.md)
-* [ResourceRules](interfaces/rbac.resourcerules.md)
-* [RoleRules](interfaces/rbac.rolerules.md)
-* [RulesObject](interfaces/rbac.rulesobject.md)
+* [RBAC](classes/rbac.md)
 
-### Type aliases
+### Variables
 
-* [WhenFn](README.md#static-whenfn)
+* [SEPARATOR](README.md#const-separator)
 
-### Constructors
+### Functions
 
-* [constructor](README.md#constructor)
+* [flatten](README.md#private-flatten)
+* [mergeRoles](README.md#private-mergeroles)
 
-### Methods
+## Variables
 
-* [add](README.md#add)
-* [can](README.md#can)
-* [remove](README.md#remove)
+### `Const` SEPARATOR
 
-## Type aliases
+• **SEPARATOR**: *":"* = ":"
 
-### `Static` WhenFn
+Defined in index.ts:3
 
-Ƭ **WhenFn**: *function*
+## Functions
 
-Defined in index.ts:216
+### `Private` flatten
 
-Dynamic condition check function.
+▸ **flatten**(`object`: object, `separator`: string): *object*
 
-#### Type declaration:
+Defined in utils.ts:4
 
-▸ (`context`: any): *boolean | Promise‹boolean›*
+**Parameters:**
+
+Name | Type | Default |
+------ | ------ | ------ |
+`object` | object | - |
+`separator` | string | "." |
+
+**Returns:** *object*
+
+* \[ **key**: *string*\]: any
+
+___
+
+### `Private` mergeRoles
+
+▸ **mergeRoles**(`dst`: object, ...`srcs`: Array‹object›): *object*
+
+Defined in utils.ts:42
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`context` | any |
+`dst` | object |
+`...srcs` | Array‹object› |
 
-## Constructors
+**Returns:** *object*
 
-###  constructor
-
-\+ **new RBAC**(`options`: [Options](interfaces/rbac.options.md)): *[RBAC](README.md)*
-
-Defined in index.ts:44
-
-RBAC constructor
-
-**Parameters:**
-
-Name | Type | Default | Description |
------- | ------ | ------ | ------ |
-`options` | [Options](interfaces/rbac.options.md) |  {} | RBAC options  |
-
-**Returns:** *[RBAC](README.md)*
-
-## Methods
-
-###  add
-
-▸ **add**(`role`: string, `resource`: string, `operation`: string, `when?`: [WhenFn](README.md#static-whenfn)): *void*
-
-Defined in index.ts:95
-
-Adds new role to rules.
-
-**`version`** 1.1.X
-
-**Parameters:**
-
-Name | Type | Description |
------- | ------ | ------ |
-`role` | string | user role |
-`resource` | string | resource to access |
-`operation` | string | allowed operation |
-`when?` | [WhenFn](README.md#static-whenfn) | function for additional checks  |
-
-**Returns:** *void*
-
-___
-
-###  can
-
-▸ **can**(`role`: string, `resource`: string, `operation?`: undefined | string): *boolean*
-
-Defined in index.ts:153
-
-Checks if user can perform operation without checking when condition.
-
-**`version`** 1.X.X
-
-**Parameters:**
-
-Name | Type | Description |
------- | ------ | ------ |
-`role` | string | user role |
-`resource` | string | resource to access |
-`operation?` | undefined \| string | operation on resource |
-
-**Returns:** *boolean*
-
-true if role has access to resources
-
-▸ **can**(`role`: string, `resource`: string, `operation`: string, `context`: any): *Promise‹boolean›*
-
-Defined in index.ts:165
-
-Checks if user can perform operation with checking when condition if it's provided.
-
-**`version`** 1.X.X
-
-**Parameters:**
-
-Name | Type | Description |
------- | ------ | ------ |
-`role` | string | user role |
-`resource` | string | resource to access |
-`operation` | string | operation on resource |
-`context` | any | context passed to when function, set it to null |
-
-**Returns:** *Promise‹boolean›*
-
-true if role has access to resources.
-
-___
-
-###  remove
-
-▸ **remove**(`role`: string, `resource`: string, `operation`: string): *void*
-
-Defined in index.ts:116
-
-Remove rule(s).
-
-**`version`** 1.1.X
-
-**Parameters:**
-
-Name | Type | Default | Description |
------- | ------ | ------ | ------ |
-`role` | string | - | user role |
-`resource` | string | "*" | resource to access |
-`operation` | string | "*" | operation  |
-
-**Returns:** *void*
+* \[ **key**: *string*\]: any
