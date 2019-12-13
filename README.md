@@ -67,6 +67,7 @@ For using this lib in browser it provides three options:
 * AMD-style: `dist/browser/rbac.bundle.amd.js`
 * System-style: `dist/browser/rbac.bundle.amd.js`
 * ES6: `dist/browser/index.js` (`module` property is set for using with rollup and webpack)
+* IIFE: `dist/browser/rbac.bundle.js` and `dist/browser/rbac.bundle.min.js` (not tested, it may not work properly)
 
 ### Benchmark results
 
