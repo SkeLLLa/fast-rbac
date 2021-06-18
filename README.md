@@ -90,7 +90,7 @@ For more details refer to [benchmark doc](benchmark/BENCHMARK.md).
 
 ## Usage
 
-** NOTE **: No cyclic roles interherence. You've been warned.
+** NOTE **: No cyclic roles inheritance. You've been warned.
 
 `can` method returns `boolean` if 3 arguments are passed to it.
 It could return `Promise` if rule has `when` function and `context` is passed.
@@ -126,6 +126,7 @@ const a = new RBAC({
   },
 });
 
+
 console.log(a.can('user', 'dog', 'read')); // true
 
 (async () => {
@@ -148,7 +149,7 @@ PRs welcome!
 - [x] Add/delete roles in runtime
 - [x] Add some unit tests
 - [ ] Add possibility to add/delete roles inherits
-- [ ] Deal with circular role interherence (but I'm totally ok with callstack error)
+- [ ] Deal with circular role inheritance (but I'm totally ok with callstack error)
 
 ## Docs
 
