@@ -50,4 +50,4 @@ Dynamic condition check function.
 
 #### Defined in
 
-[index.ts:216](https://github.com/SkeLLLa/fast-rbac/blob/e543d2b/src/index.ts#L216)
+[index.ts:216](https://github.com/SkeLLLa/fast-rbac/blob/e7b061f/src/index.ts#L216)

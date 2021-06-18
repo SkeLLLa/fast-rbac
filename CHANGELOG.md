@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/SkeLLLa/fast-rbac/compare/v1.3.0...v2.0.0) (2021-06-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* potentially breaking interface changes for browser version
+
+### Features
+
+* deps update, refactor, rollup update ([519c0a7](https://github.com/SkeLLLa/fast-rbac/commit/519c0a7790cca11054640c782d0cfd8d4e148a7d))
+
+
+### Misc
+
+* **deps:** bump acorn from 5.7.3 to 5.7.4 ([3710be7](https://github.com/SkeLLLa/fast-rbac/commit/3710be76f320082756b48cce6522acdfc488f285))
+* **deps:** bump jquery from 3.4.1 to 3.5.0 ([1d37816](https://github.com/SkeLLLa/fast-rbac/commit/1d378165e43ebeefcd64524005245920da611677))
+* **deps:** bump websocket-extensions from 0.1.3 to 0.1.4 ([c5c6c2d](https://github.com/SkeLLLa/fast-rbac/commit/c5c6c2db8a82df094828464d35f74263e36788a7))
+* **deps-dev:** bump codecov from 3.6.1 to 3.6.5 ([52e5430](https://github.com/SkeLLLa/fast-rbac/commit/52e54302d7dad01eb597e072950c03a20bff83d4))
+
+
+### Tests
+
+* fix tests ([db53f6b](https://github.com/SkeLLLa/fast-rbac/commit/db53f6be3f44d84ea34d8d3fd5c77832250280fb))
+
 ## [1.3.0](https://gitlab.com/m03geek/fast-rbac/compare/v1.2.3...v1.3.0) (2019-12-13)
 
 
