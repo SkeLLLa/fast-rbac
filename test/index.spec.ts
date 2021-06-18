@@ -29,7 +29,7 @@ describe('rbac', () => {
               name: 'foo',
               operation: 'create',
               when: (ctx: { userId: string; ownerId: string }) => {
-                return ctx.userId === ctx.ownerId;
+                return Promise.resolve(ctx.userId === ctx.ownerId);
               },
             },
           ],
@@ -92,7 +92,7 @@ describe('rbac', () => {
               name: 'foo',
               operation: 'create',
               when: (ctx: { userId: string; ownerId: string }) => {
-                return ctx.userId === ctx.ownerId;
+                return Promise.resolve(ctx.userId === ctx.ownerId);
               },
             },
           ],
@@ -308,7 +308,7 @@ describe('rbac', () => {
       expect(rbac['_rulesCompiled']['guest:foo:read']).toEqual(true);
       expect(rbac['_rulesCompiled']['guest:bar:read']).toEqual(true);
     });
-    test('hierarchical:can:true', async () => {
+    test('hierarchical:can:true', () => {
       const rbac = new RBAC({
         roles: {
           guest: {
@@ -335,12 +335,12 @@ describe('rbac', () => {
       expect(rbac['_rulesCompiled']['user:foo:remove']).toEqual(true);
       expect(rbac.can('admin', 'foo', 'create')).toEqual(true);
       expect(rbac['_rulesCompiled']['admin:foo:create']).toBeDefined();
-      await expect(
-        rbac.can('admin', 'foo', 'create', { a: 1, b: 1 })
-      ).resolves.toEqual(true);
-      await expect(
-        rbac.can('admin', 'foo', 'create', { a: 1, b: 2 })
-      ).resolves.toEqual(false);
+      void expect(rbac.can('admin', 'foo', 'create', { a: 1, b: 1 })).toEqual(
+        true
+      );
+      void expect(rbac.can('admin', 'foo', 'create', { a: 1, b: 2 })).toEqual(
+        false
+      );
     });
   });
   describe('remove', () => {

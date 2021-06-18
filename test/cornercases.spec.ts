@@ -31,14 +31,10 @@ describe('rbac', () => {
         },
       },
     });
-    console.log(rbac['_rules']);
-    console.log(rbac['_rulesCompiled']);
-    test('extend:overrrides', async () => {
-      await expect(rbac.can('user', 'foo', 'read', {})).resolves.toEqual(false);
-      await expect(rbac.can('admin', 'foo', 'read', {})).resolves.toEqual(true);
-      await expect(rbac.can('superadmin', 'foo', 'read', {})).resolves.toEqual(
-        true
-      );
+    test('extend:overrrides', () => {
+      void expect(rbac.can('user', 'foo', 'read', {})).toEqual(false);
+      void expect(rbac.can('admin', 'foo', 'read', {})).toEqual(true);
+      void expect(rbac.can('superadmin', 'foo', 'read', {})).toEqual(true);
     });
   });
 });
