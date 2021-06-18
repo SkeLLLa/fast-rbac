@@ -1,6 +1,4 @@
-// tslint:disable: no-string-literal
-
-import 'jest';
+import { describe, test, expect } from '@jest/globals';
 import RBAC from '../src/index';
 
 describe('rbac', () => {
@@ -35,10 +33,12 @@ describe('rbac', () => {
     });
     console.log(rbac['_rules']);
     console.log(rbac['_rulesCompiled']);
-    test('extend:overrrides', () => {
-      expect(rbac.can('user', 'foo', 'read', {})).toEqual(false);
-      expect(rbac.can('admin', 'foo', 'read', {})).toEqual(true);
-      expect(rbac.can('superadmin', 'foo', 'read', {})).toEqual(true);
+    test('extend:overrrides', async () => {
+      await expect(rbac.can('user', 'foo', 'read', {})).resolves.toEqual(false);
+      await expect(rbac.can('admin', 'foo', 'read', {})).resolves.toEqual(true);
+      await expect(rbac.can('superadmin', 'foo', 'read', {})).resolves.toEqual(
+        true
+      );
     });
   });
 });

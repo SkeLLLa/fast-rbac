@@ -1,6 +1,4 @@
-// tslint:disable: no-string-literal
-
-import 'jest';
+import { describe, test, expect } from '@jest/globals';
 import RBAC from '../src/index';
 
 describe('rbac', () => {
@@ -30,7 +28,7 @@ describe('rbac', () => {
             {
               name: 'foo',
               operation: 'create',
-              when: (ctx) => {
+              when: (ctx: { userId: string; ownerId: string }) => {
                 return ctx.userId === ctx.ownerId;
               },
             },
@@ -93,7 +91,7 @@ describe('rbac', () => {
             {
               name: 'foo',
               operation: 'create',
-              when: (ctx) => {
+              when: (ctx: { userId: string; ownerId: string }) => {
                 return ctx.userId === ctx.ownerId;
               },
             },
@@ -140,16 +138,16 @@ describe('rbac', () => {
         expect(basic.can('superadmin', 'foo', 'read')).toEqual(false);
         expect(basic['_rulesCompiled']['superadmin:foo:read']).toBeUndefined();
       });
-      test('can:when:true', () => {
-        expect(
-          basic.can('superadmin', 'foo', 'create', {userId: 1, ownerId: 1})
-        ).toEqual(true);
+      test('can:when:true', async () => {
+        await expect(
+          basic.can('superadmin', 'foo', 'create', { userId: 1, ownerId: 1 })
+        ).resolves.toEqual(true);
         expect(basic['_rulesCompiled']['superadmin:foo:create']).toBeDefined();
       });
-      test('can:when:false', () => {
-        expect(
-          basic.can('superadmin', 'foo', 'create', {userId: 1, ownerId: 2})
-        ).toEqual(false);
+      test('can:when:false', async () => {
+        await expect(
+          basic.can('superadmin', 'foo', 'create', { userId: 1, ownerId: 2 })
+        ).resolves.toEqual(false);
         expect(basic['_rulesCompiled']['superadmin:foo:create']).toBeDefined();
       });
     });
@@ -264,24 +262,24 @@ describe('rbac', () => {
           hierarchical['_rulesCompiled']['superadmin:foo:restricted']
         ).toBeUndefined();
       });
-      test('can:when:true', () => {
-        expect(
+      test('can:when:true', async () => {
+        await expect(
           hierarchical.can('superadmin', 'foo', 'create', {
             userId: 1,
             ownerId: 1,
           })
-        ).toEqual(true);
+        ).resolves.toEqual(true);
         expect(
           hierarchical['_rulesCompiled']['superadmin:foo:create']
         ).toBeDefined();
       });
-      test('can:when:false', () => {
-        expect(
+      test('can:when:false', async () => {
+        await expect(
           hierarchical.can('superadmin', 'foo', 'create', {
             userId: 1,
             ownerId: 2,
           })
-        ).toEqual(false);
+        ).resolves.toEqual(false);
         expect(
           hierarchical['_rulesCompiled']['superadmin:foo:create']
         ).toBeDefined();
@@ -310,7 +308,7 @@ describe('rbac', () => {
       expect(rbac['_rulesCompiled']['guest:foo:read']).toEqual(true);
       expect(rbac['_rulesCompiled']['guest:bar:read']).toEqual(true);
     });
-    test('hierarchical:can:true', () => {
+    test('hierarchical:can:true', async () => {
       const rbac = new RBAC({
         roles: {
           guest: {
@@ -327,7 +325,7 @@ describe('rbac', () => {
         },
       });
       rbac.add('guest', 'foo', 'remove');
-      rbac.add('user', 'foo', 'create', (ctx) => {
+      rbac.add('user', 'foo', 'create', (ctx: { a: number; b: number }) => {
         return ctx.a === ctx.b;
       });
 
@@ -337,8 +335,12 @@ describe('rbac', () => {
       expect(rbac['_rulesCompiled']['user:foo:remove']).toEqual(true);
       expect(rbac.can('admin', 'foo', 'create')).toEqual(true);
       expect(rbac['_rulesCompiled']['admin:foo:create']).toBeDefined();
-      expect(rbac.can('admin', 'foo', 'create', {a: 1, b: 1})).toEqual(true);
-      expect(rbac.can('admin', 'foo', 'create', {a: 1, b: 2})).toEqual(false);
+      await expect(
+        rbac.can('admin', 'foo', 'create', { a: 1, b: 1 })
+      ).resolves.toEqual(true);
+      await expect(
+        rbac.can('admin', 'foo', 'create', { a: 1, b: 2 })
+      ).resolves.toEqual(false);
     });
   });
   describe('remove', () => {
@@ -420,8 +422,8 @@ describe('rbac', () => {
           },
           user: {
             can: ['foo:update'],
-            inherits: ['guest']
-          }
+            inherits: ['guest'],
+          },
         },
       });
       expect(rbac.can('user', 'foo', 'read')).toEqual(true);

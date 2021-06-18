@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.shared.json",
+  "compilerOptions": {
+    "outDir": "dist/browser",
+    "lib": ["es6", "dom", "es2017.object"],
+    "resolveJsonModule": false
+  }
+}

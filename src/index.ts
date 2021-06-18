@@ -1,4 +1,4 @@
-import {flatten, mergeRoles} from './utils';
+import { flatten, mergeRoles } from './utils';
 
 const SEPARATOR = ':';
 
@@ -10,9 +10,9 @@ export class RBAC {
    * RBAC roles object
    */
   private _rules: RBAC.RoleRules = {};
-  private _rulesCompiled: {[rule: string]: boolean | RBAC.WhenFn} = {};
+  private _rulesCompiled: { [rule: string]: boolean | RBAC.WhenFn } = {};
   private _refs: RBAC.Refs = {};
-  private _memoize: boolean = true;
+  private _memoize = true;
 
   private _collectRefs(refs?: RBAC.RoleRules) {
     if (typeof refs === 'undefined') {
@@ -48,7 +48,7 @@ export class RBAC {
    * @param options RBAC options
    */
   constructor(options: RBAC.Options = {}) {
-    const {roles = {}, memoize = true} = options;
+    const { roles = {}, memoize = true } = options;
     this._memoize = memoize;
 
     for (const [roleName, permissions] of Object.entries(roles)) {
@@ -162,23 +162,23 @@ export class RBAC {
    * @param context context passed to when function, set it to null
    * @returns true if role has access to resources.
    */
-  public can(
+  public can<TContext = any>(
     role: string,
     resource: string,
     operation: string,
-    context: any
+    context: TContext
   ): Promise<boolean>;
 
-  public can(
+  public can<TContext = any>(
     role: string,
     resource: string,
     operation: string,
-    context?: any
+    context?: TContext
   ): boolean | Promise<boolean> {
     let check: boolean | RBAC.WhenFn = false;
     const checkWhen = typeof context !== 'undefined';
     const rule = [role, resource, operation].join(SEPARATOR);
-    if (this._rulesCompiled.hasOwnProperty(rule)) {
+    if (Object.hasOwnProperty.call(this._rulesCompiled, rule)) {
       check = this._rulesCompiled[rule];
     } else {
       const wildcardRules = [
@@ -187,7 +187,7 @@ export class RBAC {
         [role, '*', '*'].join(SEPARATOR),
       ];
       for (const wcr of wildcardRules) {
-        if (this._rulesCompiled.hasOwnProperty(wcr)) {
+        if (Object.hasOwnProperty.call(this._rulesCompiled, wcr)) {
           check = this._rulesCompiled[wcr];
           if (this._memoize) {
             // add to rules
@@ -213,7 +213,9 @@ export namespace RBAC {
   /**
    * Dynamic condition check function.
    */
-  export type WhenFn = (context: any) => boolean | Promise<boolean>;
+  export type WhenFn<TContext = any> = (
+    context: TContext
+  ) => boolean | Promise<boolean>;
   /**
    * Interherence references.
    * @see {@link RBAC.RoleRules}

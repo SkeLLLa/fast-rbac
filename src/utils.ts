@@ -2,9 +2,9 @@
  * @private
  */
 export function flatten(
-  object: {[key: string]: any},
-  separator: string = '.'
-): {[key: string]: any} {
+  object: { [key: string]: any },
+  separator = '.'
+): { [key: string]: any } {
   const isValidObject = (value: {}): boolean => {
     if (!value) {
       return false;
@@ -20,7 +20,7 @@ export function flatten(
   };
 
   const walker = (
-    child: {[key: string]: any},
+    child: { [key: string]: any },
     path: Array<string> = []
   ): Object => {
     return Object.assign(
@@ -28,27 +28,27 @@ export function flatten(
       ...Object.keys(child).map((key) =>
         isValidObject(child[key])
           ? walker(child[key], path.concat([key]))
-          : {[path.concat([key]).join(separator)]: child[key]}
+          : { [path.concat([key]).join(separator)]: child[key] as unknown }
       )
-    );
+    ) as Object;
   };
 
-  return {...walker(object)};
+  return { ...walker(object) };
 }
 
 /**
  * @private
  */
 export function mergeRoles(
-  dst: {[key: string]: any},
-  ...srcs: Array<{[key: string]: any}>
-): {[key: string]: any} {
+  dst: { [key: string]: any },
+  ...srcs: Array<{ [key: string]: any }>
+): { [key: string]: any } {
   for (const src of srcs) {
     for (const [key, val] of Object.entries(src)) {
       if (typeof val === 'object') {
-        dst[key] = {...dst[key], ...val};
+        dst[key] = { ...dst[key], ...val } as Object;
       } else {
-        dst[key] = val;
+        dst[key] = val as unknown;
       }
     }
   }

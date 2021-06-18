@@ -1,15 +1,15 @@
-import 'jest';
+import { describe, test, expect } from '@jest/globals';
 import module from '../src/index';
-const {name} = require('../package.json');
+import { name } from '../package.json';
 
 describe(name, () => {
-  test('module exported', async () => {
+  test('module exported', () => {
     expect(module).toBeDefined();
   });
 
-  test('interface exported', async () => {
-    expect(module.prototype.can).toBeDefined();
-    expect(module.prototype.add).toBeDefined();
-    expect(module.prototype.remove).toBeDefined();
+  test('interface exported', () => {
+    expect(typeof module.prototype.can).toBe('function');
+    expect(typeof module.prototype.add).toBe('function');
+    expect(typeof module.prototype.remove).toBe('function');
   });
 });

@@ -1,5 +1,5 @@
-import 'jest';
-import {mergeRoles, flatten} from '../src/utils';
+import { describe, test, expect } from '@jest/globals';
+import { mergeRoles, flatten } from '../src/utils';
 
 describe('utils', () => {
   describe('mergeRoles', () => {
@@ -27,7 +27,7 @@ describe('utils', () => {
         e: 4,
       },
     };
-    test('merges object', async () => {
+    test('merges object', () => {
       expect(mergeRoles({}, foo, bar)).toEqual(foobar);
     });
   });
@@ -49,14 +49,14 @@ describe('utils', () => {
       'a.b.c': 1,
       'a.b.d.e': 2,
       'a.f': 3,
-      g: 4,
+      'g': 4,
     };
 
     const fooFlatSep = {
       'a:b:c': 1,
       'a:b:d:e': 2,
       'a:f': 3,
-      g: 4,
+      'g': 4,
     };
 
     const invalid = {
@@ -64,15 +64,15 @@ describe('utils', () => {
       b: null,
     };
 
-    test('default separator', async () => {
+    test('default separator', () => {
       expect(flatten(foo)).toEqual(fooFlat);
     });
 
-    test('custom separator', async () => {
+    test('custom separator', () => {
       expect(flatten(foo, ':')).toEqual(fooFlatSep);
     });
 
-    test('invalid object', async () => {
+    test('invalid object', () => {
       expect(flatten(invalid)).toEqual(invalid);
     });
   });

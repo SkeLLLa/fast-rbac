@@ -2,58 +2,6 @@
   "name": "fast-rbac",
   "version": "1.3.0",
   "description": "Fast and simple RBAC lib",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "dist/browser/index.js",
-  "config": {
-    "releaseBranch": "master"
-  },
-  "directories": {
-    "doc": "docs",
-    "lib": "dist",
-    "test": "test"
-  },
-  "files": [
-    "dist/**/*.js",
-    "dist/**/*.ts"
-  ],
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "standard-version": {
-    "scripts": {
-      "prerelease": "npm run test",
-      "postbump": "echo Version: v$npm_package_version",
-      "postchangelog": "replace \"https://github.com/SkeLLLa/\" \"https://gitlab.com/m03geek/\" CHANGELOG.md",
-      "posttag": "git push --follow-tags origin $npm_package_config_releaseBranch"
-    }
-  },
-  "scripts": {
-    "lint": "eslint . && tslint -p ./ && tslint -p ./test",
-    "lint:fix": "eslint . --fix && tslint -p ./ --fix && tslint -p ./test --fix",
-    "test": "npm audit || true && npm run lint && npm run unit",
-    "unit": "jest",
-    "postunit": "codecov",
-    "prebenchmark": "npm i --no-save easy-rbac @rbac/rbac rbac benchmark",
-    "benchmark": "node benchmark/index.js",
-    "build": "npm run build:node && npm run build:browser",
-    "build:node": "tsc",
-    "build:browser": "npm run build:browser:es6 && npm run build:browser:amd && npm run build:browser:system",
-    "build:browser:amd": "tsc -p browser.tsconfig.json -m amd -t es6 --outFile dist/browser/rbac.bundle.amd.js",
-    "build:browser:es6": "tsc -p browser.tsconfig.json -m es6 -t es6 --outDir dist/browser",
-    "postbuild:browser:es6": "rollup  dist/browser/index.js -c rollup.config.js",
-    "build:browser:system": "tsc -p browser.tsconfig.json -m system -t es6 --outFile dist/browser/rbac.bundle.system.js",
-    "prerelease": "npm run typedoc && git add -A ./docs",
-    "release": "git add -A && standard-version -a",
-    "typedoc": "rm -rf ./docs/* && typedoc --excludeExternals --name \"$npm_package_name\" --readme none --mode file --includeDeclarations --excludePrivate --theme markdown --out ./docs",
-    "docs": "documentation build dist/rbac.js --resolve=node -f md -o API.md"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SkeLLLa/fast-rbac.git"
-  },
   "keywords": [
     "rbac",
     "acl",
@@ -64,35 +12,83 @@
     "security",
     "permission"
   ],
-  "author": "m03geek",
-  "license": "MIT",
+  "homepage": "https://github.com/SkeLLLa/fast-rbac#README",
   "bugs": {
-    "url": "https://gitlab.com/m03geek/fast-rbac/issues"
+    "url": "https://github.com/SkeLLLa/fast-rbac/issues"
   },
-  "homepage": "https://gitlab.com/m03geek/fast-rbac#README",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SkeLLLa/fast-rbac.git"
+  },
+  "license": "MIT",
+  "author": "m03geek",
+  "main": "dist/index.js",
+  "module": "dist/browser/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "dist",
+    "doc": "docs",
+    "test": "test"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.ts"
+  ],
+  "scripts": {
+    "prebenchmark": "npm i --no-save easy-rbac @rbac/rbac rbac benchmark",
+    "benchmark": "node benchmark/index.js",
+    "build": "npm run build:node && npm run build:browser",
+    "build:browser": "npm run build:browser:es6 && npm run build:browser:amd && npm run build:browser:system",
+    "build:browser:amd": "tsc -p tsconfig.browser.json -m amd -t es6 --outFile dist/browser/rbac.bundle.amd.js",
+    "build:browser:es6": "tsc -p tsconfig.browser.json -m es6 -t es6 --outDir dist/browser",
+    "postbuild:browser:es6": "rollup  dist/browser/index.js -c rollup.config.js",
+    "build:browser:system": "tsc -p tsconfig.browser.json -m system -t es6 --outFile dist/browser/rbac.bundle.system.js",
+    "build:node": "tsc -p tsconfig.node.json",
+    "get-changelog": "conventional-changelog -r 2 -p angular",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint . --ext js,jsx,ts,tsx",
+    "unit": "jest --coverage",
+    "postunit": "codecov || true",
+    "version:update": "echo v$npm_package_version > VERSION",
+    "prerelease": "npm run typedoc && git add -A ./docs",
+    "release": "git add -A && standard-version -a",
+    "test": "npm audit --production && npm run lint && npm run unit",
+    "typedoc": "rm -rf ./docs/* && typedoc && pretty-quick"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "@types/jest": "^24.0.23",
-    "@types/node": "^12.12.17",
-    "codecov": "^3.6.1",
-    "documentation": "^12.1.4",
-    "eslint": "^6.7.2",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@jest/globals": "^27.0.3",
+    "@types/node": "^15.12.3",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "codecov": "^3.8.2",
+    "conventional-changelog-cli": "^2.1.1",
+    "eslint": "^7.28.0",
     "eslint-config-google": "^0.14.0",
-    "fastify": "^2.11.0",
-    "husky": "^3.1.0",
-    "jest": "^24.9.0",
-    "replace": "^1.1.1",
-    "rollup": "^1.27.12",
-    "rollup-plugin-terser": "^5.1.3",
-    "standard-version": "^7.0.1",
-    "ts-jest": "^24.2.0",
-    "ts-node": "^8.5.4",
-    "tslint": "^5.20.1",
-    "tslint-eslint-rules": "^5.4.0",
-    "typedoc": "^0.15.4",
-    "typedoc-plugin-markdown": "^2.2.14",
-    "typescript": "^3.7.3"
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-sort-requires": "^2.1.0",
+    "husky": "^6.0.0",
+    "jest": "^27.0.4",
+    "prettier": "^2.3.1",
+    "prettier-plugin-packagejson": "^2.2.11",
+    "pretty-quick": "^3.1.0",
+    "rollup": "^2.52.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "standard-version": "^9.3.0",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.0.0",
+    "typedoc": "^0.21.0",
+    "typedoc-plugin-markdown": "^3.9.0",
+    "typescript": "~4.2.4"
   }
 }
