@@ -5,5 +5,7 @@
     "outDir": "dist/browser",
     "lib": ["es6", "dom", "es2017.object"],
     "resolveJsonModule": false
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist/**/*", "coverage/**/*", "node_modules/**/*"]
 }

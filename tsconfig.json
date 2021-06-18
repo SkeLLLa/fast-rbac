@@ -1,4 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./tsconfig.node.json"
+  "extends": "./tsconfig.node.json",
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts", "src/utils.ts"],
+    "out": "docs",
+    "name": "Fast RBAC",
+    "excludeExternals": true,
+    "includeVersion": true,
+    "hideGenerator": true,
+    "excludePrivate": true,
+    "readme": "none"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist/**/*", "coverage/**/*", "node_modules/**/*"]
 }

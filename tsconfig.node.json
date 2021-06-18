@@ -5,5 +5,7 @@
     "target": "es2018",
     "resolveJsonModule": true,
     "module": "commonjs"
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist/**/*", "coverage/**/*", "node_modules/**/*"]
 }
