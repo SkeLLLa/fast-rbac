@@ -6,9 +6,9 @@
 [![NPM Version](https://img.shields.io/npm/v/fast-rbac.svg)](https://www.npmjs.com/package/fast-rbac)
 [![Downloads Count](https://img.shields.io/npm/dm/fast-rbac.svg)](https://www.npmjs.com/package/fast-rbac)
 [![Vunerabilities Count](https://snyk.io/test/npm/fast-rbac/badge.svg)](https://www.npmjs.com/package/fast-rbac)
-[![Build Status](https://gitlab.com/m03geek/fast-rbac/badges/master/pipeline.svg)](https://gitlab.com/m03geek/fast-rbac/commits/master)
+[![Build Status](https://github.com/SkeLLLa/fast-rbac/workflows/build/badge.svg)](https://github.com/SkeLLLa/fast-rbac/commits/master)
 [![License](https://img.shields.io/npm/l/fast-rbac.svg)](https://gitlab.com/m03geek/fast-rbac/blob/master/LICENSE)
-[![Codecov](https://img.shields.io/codecov/c/gl/m03geek/fast-rbac.svg)](https://codecov.io/gl/m03geek/fast-rbac)
+[![Codecov Coverage](https://codecov.io/gh/SkeLLLa/fast-rbac/branch/master/graph/badge.svg?token=wLjMou8TT7)](https://codecov.io/gh/SkeLLLa/fast-rbac)
 [![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/SkeLLLa/fast-rbac.svg)](https://lgtm.com/projects/g/SkeLLLa/fast-rbac/)
 [![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/SkeLLLa/fast-rbac.svg)](https://lgtm.com/projects/g/SkeLLLa/fast-rbac/)
 
@@ -19,13 +19,14 @@ Implementation of RBAC module tuned to be fast
 
 Main rules:
 
-* No RegEx
-* O(1) time complexity for checking rules
-* Wildcard and inherited rules caching
-* No foolproof checks (use docs, jsdoc, types and implement those checks on your side if necessary)
-* Zero dependency
+- No RegEx
+- O(1) time complexity for checking rules
+- Wildcard and inherited rules caching
+- No foolproof checks (use docs, jsdoc, types and implement those checks on your side if necessary)
+- Zero dependency
 
 ## ToC
+
 - [fast-rbac](#fast-rbac)
   - [ToC](#toc)
   - [Installation](#installation)
@@ -50,24 +51,24 @@ npm i fast-rbac --save
 
 ## Features and requirements
 
-* Wildcard rules support
-* Inheritance support
-* Typescript support
-* Prebuilt browser amd and system modules
-* It's fast
+- Wildcard rules support
+- Inheritance support
+- Typescript support
+- Prebuilt browser amd and system modules
+- It's fast
 
---- 
+---
 
-* Node.js `>=8.0.0`.
+- Node.js `>=8.0.0`.
 
 ### Browser support
 
 For using this lib in browser it provides three options:
 
-* AMD-style: `dist/browser/rbac.bundle.amd.js`
-* System-style: `dist/browser/rbac.bundle.amd.js`
-* ES6: `dist/browser/index.js` (`module` property is set for using with rollup and webpack)
-* IIFE: `dist/browser/rbac.bundle.js` and `dist/browser/rbac.bundle.min.js` (not tested, it may not work properly)
+- AMD-style: `dist/browser/rbac.bundle.amd.js`
+- System-style: `dist/browser/rbac.bundle.amd.js`
+- ES6: `dist/browser/index.js` (`module` property is set for using with rollup and webpack)
+- IIFE: `dist/browser/rbac.bundle.js` and `dist/browser/rbac.bundle.min.js` (not tested, it may not work properly)
 
 ### Benchmark results
 
@@ -81,7 +82,7 @@ fast-rbac x 1,516,366 ops/sec ±0.38% (97 runs sampled)
 fast-rbac:defer x 1,037,149 ops/sec ±0.71% (86 runs sampled)
 ```
 
-Benchmark code is available in `benchmark` directory. 
+Benchmark code is available in `benchmark` directory.
 
 For more details refer to [benchmark doc](benchmark/BENCHMARK.md).
 
@@ -105,10 +106,10 @@ import RBAC from 'fast-rbac';
 
 const a = new RBAC({
   roles: {
-    user: {can: ['cat:create', 'dog:*', {name: 'foo', operation: 'read'}]},
-    prouser: {can: ['cat:update'], inherits: ['user', 'reader']},
-    admin: {can: ['*']},
-    reader: {can: ['*:read'], inherits: ['anon']},
+    user: { can: ['cat:create', 'dog:*', { name: 'foo', operation: 'read' }] },
+    prouser: { can: ['cat:update'], inherits: ['user', 'reader'] },
+    admin: { can: ['*'] },
+    reader: { can: ['*:read'], inherits: ['anon'] },
     anon: {
       can: [
         {
@@ -129,15 +130,14 @@ const a = new RBAC({
 console.log(a.can('user', 'dog', 'read')); // true
 
 (async () => {
-  console.log(await a.can('anon', 'cat', 'read', {color: 'red'})); // true
-})()
+  console.log(await a.can('anon', 'cat', 'read', { color: 'red' })); // true
+})();
 
 a.add('someone', 'something', 'read');
 console.log(a.can('someone', 'something', 'read')); // true
 console.log(a.can('someone', 'something', 'write')); // false
 a.remove('someone', 'something', 'read');
 console.log(a.can('someone', 'something', 'read')); // false
-
 ```
 
 <sub>[Back to top](#toc)</sub>
@@ -146,8 +146,8 @@ console.log(a.can('someone', 'something', 'read')); // false
 
 PRs welcome!
 
-- [X] Add/delete roles in runtime
-- [X] Add some unit tests
+- [x] Add/delete roles in runtime
+- [x] Add some unit tests
 - [ ] Add possibility to add/delete roles inherits
 - [ ] Deal with circular role inheritance (but I'm totally ok with callstack error)
 
@@ -165,16 +165,16 @@ See [changelog](CHANGELOG.md).
 
 ## Repos info
 
-* **Main** https://gitlab.com/m03geek/fast-rbac - preferred place for issues and PRs
-* **Mirror** https://github.com/SkeLLLa/fast-rbac - only PRs accepted
+- **Main** https://gitlab.com/m03geek/fast-rbac - preferred place for issues and PRs
+- **Mirror** https://github.com/SkeLLLa/fast-rbac - only PRs accepted
 
 <sub>[Back to top](#toc)</sub>
 
 ## See also
 
-* [rbac](https://www.npmjs.com/package/rbac)
-* [@rbac/rbac](https://www.npmjs.com/package/@rbac/rbac)
-* [easy-rbac](https://www.npmjs.com/package/easy-rbac)
+- [rbac](https://www.npmjs.com/package/rbac)
+- [@rbac/rbac](https://www.npmjs.com/package/@rbac/rbac)
+- [easy-rbac](https://www.npmjs.com/package/easy-rbac)
 
 <sub>[Back to top](#toc)</sub>
 

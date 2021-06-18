@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "noErrorTruncation": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": {
+      "*": ["node_modules/*"]
+    },
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strictNullChecks": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist/**/*", "coverage/**/*", "node_modules/**/*"],
+  "typedocOptions": {
+    "entryPoints": ["src/hasher.ts", "src/objectSorter.ts"],
+    "out": "docs",
+    "name": "Node object hash",
+    "excludeExternals": true,
+    "includeVersion": true,
+    "hideGenerator": true,
+    "excludePrivate": true,
+    "readme": "none"
+  }
+}

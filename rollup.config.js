@@ -1,4 +1,5 @@
-const {terser} = require('rollup-plugin-terser');
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { terser } = require('rollup-plugin-terser');
 
 module.exports = [
   {
@@ -6,10 +7,14 @@ module.exports = [
     output: {
       file: './dist/browser/rbac.bundle.min.js',
       format: 'iife',
+      sourcemap: true,
+      moduleName: 'RBAC',
+      name: 'RBAC',
+      exports: 'named',
     },
     plugins: [
       terser({
-        sourcemap: true,
+        compress: true,
       }),
     ],
   },
@@ -18,6 +23,9 @@ module.exports = [
     output: {
       file: './dist/browser/rbac.bundle.js',
       format: 'iife',
+      moduleName: 'RBAC',
+      name: 'RBAC',
+      exports: 'named',
     },
   },
 ];
