@@ -36,7 +36,7 @@ return ctx.user.id === ctx.obj.creatorId
 
 #### Defined in
 
-[index.ts:302](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L302)
+[index.ts:302](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L302)
 
 ---
 
@@ -48,4 +48,4 @@ Optionally extend permissions from other roles.
 
 #### Defined in
 
-[index.ts:306](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L306)
+[index.ts:306](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L306)

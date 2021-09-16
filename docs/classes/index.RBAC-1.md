@@ -34,7 +34,7 @@ RBAC constructor
 
 #### Defined in
 
-[index.ts:50](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L50)
+[index.ts:50](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L50)
 
 ## Methods
 
@@ -61,7 +61,7 @@ Adds new role to rules.
 
 #### Defined in
 
-[index.ts:95](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L95)
+[index.ts:95](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L95)
 
 ---
 
@@ -89,7 +89,7 @@ true if role has access to resources
 
 #### Defined in
 
-[index.ts:153](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L153)
+[index.ts:153](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L153)
 
 ▸ **can**<`TContext`\>(`role`, `resource`, `operation`, `context`): `Promise`<`boolean`\>
 
@@ -120,7 +120,7 @@ true if role has access to resources.
 
 #### Defined in
 
-[index.ts:165](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L165)
+[index.ts:165](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L165)
 
 ---
 
@@ -146,4 +146,4 @@ Remove rule(s).
 
 #### Defined in
 
-[index.ts:116](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L116)
+[index.ts:116](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L116)

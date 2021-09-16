@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/SkeLLLa/fast-rbac/compare/v2.0.0...v2.0.1) (2021-09-16)
+
+
+### Misc
+
+* **deps:** update & fix audit ([a7a751f](https://github.com/SkeLLLa/fast-rbac/commit/a7a751ffc011caafb79c1f0d7b9787a3457da4cb))
+
+
+### Bug fixes
+
+* **build:** type generation for node fix ([3182b1f](https://github.com/SkeLLLa/fast-rbac/commit/3182b1fb4c0ba0171493a8ce0da979abb63240e8))
+* cloudflare env possible fix ([c473e1d](https://github.com/SkeLLLa/fast-rbac/commit/c473e1d85b5979c2c9004d91f2c0c8b553d276f9))
+* remove check for buffer ([ef47d80](https://github.com/SkeLLLa/fast-rbac/commit/ef47d80d6454ea9010905d1c1043750a91c109c0))
+
 ## [2.0.0](https://github.com/SkeLLLa/fast-rbac/compare/v1.3.0...v2.0.0) (2021-06-18)
 
 

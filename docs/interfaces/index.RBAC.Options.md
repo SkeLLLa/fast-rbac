@@ -25,7 +25,7 @@ If true makes wildcard matches faster.
 
 #### Defined in
 
-[index.ts:327](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L327)
+[index.ts:327](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L327)
 
 ---
 
@@ -45,4 +45,4 @@ Role and it's permissions.
 
 #### Defined in
 
-[index.ts:317](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L317)
+[index.ts:317](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L317)

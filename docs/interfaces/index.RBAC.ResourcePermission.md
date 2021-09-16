@@ -28,7 +28,7 @@ Resourece name or resource with operation.
 
 #### Defined in
 
-[index.ts:272](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L272)
+[index.ts:272](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L272)
 
 ---
 
@@ -42,7 +42,7 @@ Operation name.
 
 #### Defined in
 
-[index.ts:277](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L277)
+[index.ts:277](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L277)
 
 ---
 
@@ -56,4 +56,4 @@ Dynamic condition check function.
 
 #### Defined in
 
-[index.ts:282](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L282)
+[index.ts:282](https://github.com/SkeLLLa/fast-rbac/blob/ef47d80/src/index.ts#L282)
