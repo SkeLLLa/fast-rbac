@@ -11,14 +11,11 @@ export function flatten(
     }
 
     const isArray = Array.isArray(value);
-    const isBuffer =
-      // Fix for strange pseudo-envs like cloudflare workers
-      typeof Buffer === 'undefined' ? false : Buffer.isBuffer(value);
     const isΟbject =
       Object.prototype.toString.call(value) === '[object Object]';
     const hasKeys = !!Object.keys(value).length;
 
-    return !isArray && !isBuffer && isΟbject && hasKeys;
+    return !isArray && isΟbject && hasKeys;
   };
 
   const walker = (
