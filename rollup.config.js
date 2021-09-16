@@ -8,7 +8,6 @@ module.exports = [
       file: './dist/browser/rbac.bundle.min.js',
       format: 'iife',
       sourcemap: true,
-      moduleName: 'RBAC',
       name: 'RBAC',
       exports: 'named',
     },
@@ -23,7 +22,6 @@ module.exports = [
     output: {
       file: './dist/browser/rbac.bundle.js',
       format: 'iife',
-      moduleName: 'RBAC',
       name: 'RBAC',
       exports: 'named',
     },

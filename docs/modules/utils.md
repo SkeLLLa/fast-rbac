@@ -1,3 +1,3 @@
-[Fast RBAC - v1.3.0](../README.md) / [Modules](../modules.md) / utils
+[Fast RBAC - v2.0.0](../README.md) / utils
 
 # Module: utils

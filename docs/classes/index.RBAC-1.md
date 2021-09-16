@@ -1,4 +1,4 @@
-[Fast RBAC - v1.3.0](../README.md) / [Modules](../modules.md) / [index](../modules/index.md) / RBAC
+[Fast RBAC - v2.0.0](../README.md) / [index](../modules/index.md) / RBAC
 
 # Class: RBAC
 
@@ -10,13 +10,13 @@ RBAC classref
 
 ### Constructors
 
-- [constructor](index.rbac-1.md#constructor)
+- [constructor](index.RBAC-1.md#constructor)
 
 ### Methods
 
-- [add](index.rbac-1.md#add)
-- [can](index.rbac-1.md#can)
-- [remove](index.rbac-1.md#remove)
+- [add](index.RBAC-1.md#add)
+- [can](index.RBAC-1.md#can)
+- [remove](index.RBAC-1.md#remove)
 
 ## Constructors
 
@@ -28,13 +28,13 @@ RBAC constructor
 
 #### Parameters
 
-| Name      | Type                                           | Description  |
-| :-------- | :--------------------------------------------- | :----------- |
-| `options` | [Options](../interfaces/index.rbac.options.md) | RBAC options |
+| Name      | Type                                             | Description  |
+| :-------- | :----------------------------------------------- | :----------- |
+| `options` | [`Options`](../interfaces/index.RBAC.Options.md) | RBAC options |
 
 #### Defined in
 
-[index.ts:44](https://github.com/SkeLLLa/fast-rbac/blob/e7b061f/src/index.ts#L44)
+[index.ts:50](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L50)
 
 ## Methods
 
@@ -48,12 +48,12 @@ Adds new role to rules.
 
 #### Parameters
 
-| Name        | Type                                            | Description                    |
-| :---------- | :---------------------------------------------- | :----------------------------- |
-| `role`      | `string`                                        | user role                      |
-| `resource`  | `string`                                        | resource to access             |
-| `operation` | `string`                                        | allowed operation              |
-| `when?`     | [WhenFn](../modules/index.rbac.md#whenfn)<any\> | function for additional checks |
+| Name        | Type                                                | Description                    |
+| :---------- | :-------------------------------------------------- | :----------------------------- |
+| `role`      | `string`                                            | user role                      |
+| `resource`  | `string`                                            | resource to access             |
+| `operation` | `string`                                            | allowed operation              |
+| `when?`     | [`WhenFn`](../modules/index.RBAC.md#whenfn)<`any`\> | function for additional checks |
 
 #### Returns
 
@@ -61,7 +61,7 @@ Adds new role to rules.
 
 #### Defined in
 
-[index.ts:95](https://github.com/SkeLLLa/fast-rbac/blob/e7b061f/src/index.ts#L95)
+[index.ts:95](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L95)
 
 ---
 
@@ -89,9 +89,9 @@ true if role has access to resources
 
 #### Defined in
 
-[index.ts:153](https://github.com/SkeLLLa/fast-rbac/blob/e7b061f/src/index.ts#L153)
+[index.ts:153](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L153)
 
-▸ **can**<TContext\>(`role`, `resource`, `operation`, `context`): `Promise`<boolean\>
+▸ **can**<`TContext`\>(`role`, `resource`, `operation`, `context`): `Promise`<`boolean`\>
 
 Checks if user can perform operation with checking when condition if it's provided.
 
@@ -99,9 +99,9 @@ Checks if user can perform operation with checking when condition if it's provid
 
 #### Type parameters
 
-| Name       | Type               |
-| :--------- | :----------------- |
-| `TContext` | `TContext` = `any` |
+| Name       | Type  |
+| :--------- | :---- |
+| `TContext` | `any` |
 
 #### Parameters
 
@@ -114,13 +114,13 @@ Checks if user can perform operation with checking when condition if it's provid
 
 #### Returns
 
-`Promise`<boolean\>
+`Promise`<`boolean`\>
 
 true if role has access to resources.
 
 #### Defined in
 
-[index.ts:165](https://github.com/SkeLLLa/fast-rbac/blob/e7b061f/src/index.ts#L165)
+[index.ts:165](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L165)
 
 ---
 
@@ -137,8 +137,8 @@ Remove rule(s).
 | Name        | Type     | Default value | Description        |
 | :---------- | :------- | :------------ | :----------------- |
 | `role`      | `string` | `undefined`   | user role          |
-| `resource`  | `string` | '\*'          | resource to access |
-| `operation` | `string` | '\*'          | operation          |
+| `resource`  | `string` | `'*'`         | resource to access |
+| `operation` | `string` | `'*'`         | operation          |
 
 #### Returns
 
@@ -146,4 +146,4 @@ Remove rule(s).
 
 #### Defined in
 
-[index.ts:116](https://github.com/SkeLLLa/fast-rbac/blob/e7b061f/src/index.ts#L116)
+[index.ts:116](https://github.com/SkeLLLa/fast-rbac/blob/5bc3a55/src/index.ts#L116)
