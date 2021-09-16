@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -11,9 +10,6 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "paths": {
-      "*": ["node_modules/*"]
-    },
     "resolveJsonModule": true,
     "sourceMap": true,
     "strictNullChecks": true

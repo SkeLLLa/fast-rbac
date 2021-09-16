@@ -1,4 +1,4 @@
-[Fast RBAC - v1.3.0](../README.md) / [Modules](../modules.md) / index
+[Fast RBAC - v2.0.0](../README.md) / index
 
 # Module: index
 
@@ -10,14 +10,14 @@
 
 ### Namespaces
 
-- [RBAC](index.rbac.md)
+- [RBAC](index.RBAC.md)
 
 ### Classes
 
-- [RBAC](../classes/index.rbac-1.md)
+- [RBAC](../classes/index.RBAC-1.md)
 
 ## References
 
 ### default
 
-Renames and exports: [RBAC](../classes/index.rbac-1.md)
+• **default**: `Object`
